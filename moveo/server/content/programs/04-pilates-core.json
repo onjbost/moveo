@@ -1,0 +1,342 @@
+{
+ "id": "pilates-core",
+ "title": "Pilates: core di base",
+ "category": "pilates",
+ "level": "principiante",
+ "summary": "Quattro settimane a corpo libero per addome profondo, glutei e controllo della postura.",
+ "description": "Esercizi di matwork in versione accessibile. Il focus è la qualità: respiro coordinato, zona lombare stabile, movimenti lenti. Un core più forte aiuta la schiena da scrivania e la stabilità sulla tavola da surf.",
+ "goals": [
+  "Addome profondo e stabilità lombare",
+  "Glutei e fianchi più attivi",
+  "Controllo del movimento e postura"
+ ],
+ "equipment": [
+  "tappetino"
+ ],
+ "suggestedDays": [
+  1,
+  3,
+  5
+ ],
+ "sessions": [
+  {
+   "id": "centro",
+   "title": "Respiro e centro",
+   "focus": "Attivazione del core",
+   "blocks": [
+    {
+     "title": "Respiro",
+     "items": [
+      {
+       "exercise": "diaphragmatic-breathing",
+       "duration": 60
+      },
+      {
+       "exercise": "pelvic-tilt",
+       "reps": 10
+      }
+     ]
+    },
+    {
+     "title": "Core",
+     "items": [
+      {
+       "exercise": "toe-taps",
+       "reps": 10,
+       "note": "Alternando le gambe"
+      },
+      {
+       "exercise": "dead-bug",
+       "reps": 8,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "glute-bridge",
+       "reps": 10
+      },
+      {
+       "exercise": "plank",
+       "duration": 20
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 30
+    },
+    {
+     "title": "Fianchi e schiena",
+     "items": [
+      {
+       "exercise": "clamshell",
+       "reps": 12
+      },
+      {
+       "exercise": "bird-dog",
+       "reps": 10,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "side-plank",
+       "duration": 15
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 30
+    },
+    {
+     "title": "Allungamento",
+     "items": [
+      {
+       "exercise": "spine-stretch",
+       "reps": 6
+      },
+      {
+       "exercise": "supine-twist",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "child-pose",
+       "duration": 45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "controllo",
+   "title": "Controllo",
+   "focus": "Classici del matwork",
+   "blocks": [
+    {
+     "title": "Riscaldamento",
+     "items": [
+      {
+       "exercise": "pelvic-tilt",
+       "reps": 8
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      }
+     ]
+    },
+    {
+     "title": "Serie addominale",
+     "items": [
+      {
+       "exercise": "hundred",
+       "duration": 40
+      },
+      {
+       "exercise": "roll-down",
+       "reps": 6
+      },
+      {
+       "exercise": "single-leg-stretch",
+       "reps": 10,
+       "note": "Alternando le gambe"
+      },
+      {
+       "exercise": "leg-circles",
+       "reps": 5,
+       "note": "5 per senso"
+      }
+     ]
+    },
+    {
+     "title": "Fianchi e schiena",
+     "items": [
+      {
+       "exercise": "side-leg-lift",
+       "reps": 10
+      },
+      {
+       "exercise": "clamshell",
+       "reps": 10
+      },
+      {
+       "exercise": "swan-prep",
+       "reps": 6
+      },
+      {
+       "exercise": "pilates-swimming",
+       "duration": 30
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 30
+    },
+    {
+     "title": "Stabilità",
+     "items": [
+      {
+       "exercise": "dead-bug",
+       "reps": 10,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "plank",
+       "duration": 25
+      },
+      {
+       "exercise": "glute-bridge",
+       "reps": 12
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "child-pose",
+       "duration": 45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flusso",
+   "title": "Flusso",
+   "focus": "Tutto il corpo in sequenza",
+   "blocks": [
+    {
+     "title": "Serie addominale",
+     "items": [
+      {
+       "exercise": "hundred",
+       "duration": 50
+      },
+      {
+       "exercise": "roll-down",
+       "reps": 8
+      },
+      {
+       "exercise": "single-leg-stretch",
+       "reps": 12,
+       "note": "Alternando le gambe"
+      },
+      {
+       "exercise": "toe-taps",
+       "reps": 12,
+       "note": "Alternando le gambe"
+      }
+     ]
+    },
+    {
+     "title": "Rotazione e fianchi",
+     "items": [
+      {
+       "exercise": "saw",
+       "reps": 5
+      },
+      {
+       "exercise": "side-kick-kneeling",
+       "reps": 10
+      },
+      {
+       "exercise": "clamshell",
+       "reps": 12
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 30
+    },
+    {
+     "title": "Tenute",
+     "items": [
+      {
+       "exercise": "plank",
+       "duration": 30
+      },
+      {
+       "exercise": "side-plank",
+       "duration": 20
+      },
+      {
+       "exercise": "bird-dog",
+       "reps": 10,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "pilates-swimming",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Estensione",
+     "items": [
+      {
+       "exercise": "swan-prep",
+       "reps": 6
+      },
+      {
+       "exercise": "spine-stretch",
+       "reps": 6
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "savasana",
+       "duration": 60
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "week": 1,
+   "sessions": [
+    "centro",
+    "controllo",
+    "centro"
+   ],
+   "note": "Impara a tenere la lombare stabile: è la base di tutto."
+  },
+  {
+   "week": 2,
+   "sessions": [
+    "controllo",
+    "centro",
+    "flusso"
+   ],
+   "adjust": {
+    "reps": 1
+   }
+  },
+  {
+   "week": 3,
+   "sessions": [
+    "controllo",
+    "flusso",
+    "centro"
+   ],
+   "adjust": {
+    "reps": 2,
+    "duration": 5
+   }
+  },
+  {
+   "week": 4,
+   "sessions": [
+    "flusso",
+    "controllo",
+    "flusso"
+   ],
+   "adjust": {
+    "reps": 2,
+    "duration": 10
+   }
+  }
+ ]
+}

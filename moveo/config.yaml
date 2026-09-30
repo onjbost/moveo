@@ -1,0 +1,38 @@
+name: Moveo
+version: "0.1.0"
+slug: moveo
+description: Allenamento, stretching e pause attive (yoga, pilates, calisthenics, surf) collegato a Calendary
+url: https://moveo.gattucciocloud.it
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+init: true
+homeassistant_api: true
+ports:
+  8788/tcp: 8788
+ports_description:
+  8788/tcp: Interfaccia web Moveo
+webui: "http://[HOST]:[PORT:8788]/"
+panel_icon: mdi:yoga
+options:
+  password: ""
+  public_url: "https://moveo.gattucciocloud.it"
+  timezone: "Europe/Rome"
+  calendary_url: "http://local-calendary:8787"
+  calendary_token: ""
+  calendary_calendar: "Allenamento"
+  calendary_push: true
+  ha_notify_services: ""
+  ha_sensors: true
+schema:
+  password: password
+  public_url: url
+  timezone: str
+  calendary_url: url?
+  calendary_token: password?
+  calendary_calendar: str?
+  calendary_push: bool?
+  ha_notify_services: str?
+  ha_sensors: bool?

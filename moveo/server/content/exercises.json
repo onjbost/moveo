@@ -1,0 +1,2222 @@
+[
+ {
+  "id": "chin-tuck",
+  "name": "Retrazione del mento",
+  "searchTerm": "chin tuck exercise",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "collo"
+  ],
+  "position": "seduto",
+  "description": "Da seduto o in piedi, con lo sguardo dritto, porta il mento indietro come a farti un \"doppio mento\", poi rilascia. Contrasta la testa proiettata in avanti tipica di chi lavora al PC.",
+  "cues": [
+   "Il movimento è orizzontale: non abbassare né alzare lo sguardo",
+   "Tieni 2-3 secondi, poi rilascia lentamente",
+   "Immagina un filo che ti tira verso l'alto dalla nuca"
+  ],
+  "easier": "Fallo con la nuca appoggiata allo schienale o al muro, per sentire la direzione.",
+  "harder": "Da supino, solleva leggermente la testa da terra mantenendo il mento retratto."
+ },
+ {
+  "id": "neck-side-stretch",
+  "name": "Allungamento laterale del collo",
+  "searchTerm": "neck side stretch",
+  "categories": [
+   "desk",
+   "mobility",
+   "yoga"
+  ],
+  "targets": [
+   "collo",
+   "trapezio"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Inclina l'orecchio verso la spalla senza ruotare il viso. La spalla opposta resta bassa e pesante.",
+  "cues": [
+   "Respira lentamente e lascia cadere la spalla opposta",
+   "Per aumentare, la mano dello stesso lato appoggia sulla testa senza tirare",
+   "Torna al centro piano, senza scatti"
+  ],
+  "caution": "Deve tirare, non fare male: niente formicolii nel braccio."
+ },
+ {
+  "id": "neck-rotation",
+  "name": "Rotazione del collo",
+  "searchTerm": "neck rotation stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "collo"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Ruota lentamente la testa per guardare sopra la spalla, fermati dove senti tensione e respira. Poi l'altro lato.",
+  "cues": [
+   "Mento parallelo al pavimento",
+   "Spalle ferme: si muove solo la testa",
+   "Ogni espirazione cerca un paio di gradi in più"
+  ]
+ },
+ {
+  "id": "levator-stretch",
+  "name": "Allungamento dell'elevatore della scapola",
+  "searchTerm": "levator scapulae stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "collo",
+   "scapole"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Ruota il viso di 45° verso un lato e porta il naso verso l'ascella. Con la mano dello stesso lato accompagna appena la testa. Senti l'allungamento dietro, tra collo e scapola opposta.",
+  "cues": [
+   "La mano accompagna, non tira",
+   "Afferra il bordo della sedia con l'altra mano per tenere giù la spalla",
+   "Respiro lento e lungo"
+  ],
+  "caution": "Se senti dolore acuto o formicolio, riduci l'ampiezza."
+ },
+ {
+  "id": "shoulder-rolls",
+  "name": "Circonduzioni delle spalle",
+  "searchTerm": "shoulder rolls",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "spalle",
+   "trapezio"
+  ],
+  "position": "in piedi",
+  "description": "Disegna ampi cerchi con le spalle: su verso le orecchie, indietro, giù e avanti. Metà ripetizioni in un senso, metà nell'altro.",
+  "cues": [
+   "Cerchi grandi e lenti",
+   "Le braccia restano morbide lungo i fianchi",
+   "Espira quando le spalle scendono"
+  ]
+ },
+ {
+  "id": "doorway-pec-stretch",
+  "name": "Allungamento del petto allo stipite",
+  "searchTerm": "doorway pec stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "petto",
+   "spalle"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "equipment": [
+   "stipite della porta"
+  ],
+  "description": "Appoggia avambraccio e gomito allo stipite di una porta, gomito all'altezza della spalla. Fai un piccolo passo avanti finché senti aprirsi il petto.",
+  "cues": [
+   "Addome attivo: non inarcare la schiena",
+   "Il passo è piccolo, l'allungamento è morbido",
+   "Prova il gomito un po' più alto o più basso per cambiare zona"
+  ],
+  "easier": "Mani dietro la testa da seduto, apri i gomiti indietro.",
+  "caution": "Se la spalla è instabile o dolorante, tieni il gomito più basso della spalla."
+ },
+ {
+  "id": "wall-angels",
+  "name": "Angeli al muro",
+  "searchTerm": "wall angels exercise",
+  "categories": [
+   "desk",
+   "mobility",
+   "surf"
+  ],
+  "targets": [
+   "scapole",
+   "dorsale",
+   "spalle"
+  ],
+  "position": "in piedi",
+  "description": "Schiena, glutei e testa contro il muro, braccia a \"W\" con dorso delle mani verso il muro. Scivola in alto verso una \"Y\" e ritorna, cercando di mantenere il contatto.",
+  "cues": [
+   "Costole giù: la zona lombare resta vicina al muro",
+   "Muoviti solo fin dove mantieni il contatto",
+   "Scapole che scendono verso le tasche posteriori"
+  ],
+  "easier": "Fallo lontano dal muro, a terra da supino o solo con le braccia a metà corsa.",
+  "harder": "Tieni 3 secondi in alto a ogni ripetizione."
+ },
+ {
+  "id": "scap-squeeze",
+  "name": "Chiusure scapolari",
+  "searchTerm": "scapular retraction squeeze",
+  "categories": [
+   "desk",
+   "mobility",
+   "surf"
+  ],
+  "targets": [
+   "scapole",
+   "dorsale"
+  ],
+  "position": "seduto",
+  "description": "Braccia lungo i fianchi o a 90° davanti, avvicina le scapole tra loro e verso il basso, tieni un attimo e rilascia.",
+  "cues": [
+   "Non alzare le spalle verso le orecchie",
+   "Petto aperto, collo lungo",
+   "Tieni 2 secondi di stretta"
+  ]
+ },
+ {
+  "id": "cross-body-stretch",
+  "name": "Allungamento spalla a braccio incrociato",
+  "searchTerm": "cross body shoulder stretch",
+  "categories": [
+   "desk",
+   "mobility",
+   "surf"
+  ],
+  "targets": [
+   "spalle"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Porta un braccio disteso davanti al petto e con l'altra mano avvicinalo appena sopra il gomito. Senti la parte posteriore della spalla.",
+  "cues": [
+   "Spalla lontana dall'orecchio",
+   "Non ruotare il busto per \"barare\"",
+   "Respira e lascia che il braccio si avvicini da solo"
+  ]
+ },
+ {
+  "id": "seated-cat-cow",
+  "name": "Gatto-mucca da seduto",
+  "searchTerm": "seated cat cow",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "colonna"
+  ],
+  "position": "seduto",
+  "description": "Seduto sul bordo della sedia, mani sulle ginocchia. Inspirando apri il petto e guarda leggermente in alto; espirando arrotonda la schiena e porta il mento verso lo sterno.",
+  "cues": [
+   "Il movimento parte dal bacino",
+   "Segui il ritmo del respiro",
+   "Movimento fluido, senza forzare gli estremi"
+  ]
+ },
+ {
+  "id": "seated-twist",
+  "name": "Torsione da seduto",
+  "searchTerm": "seated spinal twist chair",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "colonna",
+   "dorsale"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Seduto con i piedi a terra, ruota il busto verso un lato aiutandoti con la mano sullo schienale. Cresci in altezza inspirando, ruota un po' di più espirando.",
+  "cues": [
+   "Bacino fermo e ben appoggiato",
+   "Prima ti allunghi, poi ruoti",
+   "Lo sguardo segue per ultimo"
+  ]
+ },
+ {
+  "id": "standing-back-extension",
+  "name": "Estensione in piedi",
+  "searchTerm": "standing back extension",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "colonna",
+   "anche"
+  ],
+  "position": "in piedi",
+  "description": "In piedi, mani sui fianchi o sulla parte bassa della schiena, spingi leggermente il bacino avanti e apri il petto verso il soffitto. Un contrappeso alle ore da seduto.",
+  "cues": [
+   "Movimento piccolo e controllato",
+   "Glutei attivi",
+   "Tieni 2 secondi e torna dritto"
+  ],
+  "caution": "Evita se dà dolore lombare: sostituisci con la retrazione del mento."
+ },
+ {
+  "id": "standing-side-bend",
+  "name": "Allungamento laterale in piedi",
+  "searchTerm": "standing side bend stretch",
+  "categories": [
+   "desk",
+   "mobility",
+   "yoga"
+  ],
+  "targets": [
+   "fianchi",
+   "dorsale"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Piedi alla larghezza del bacino, porta un braccio sopra la testa e inclinati dal lato opposto come un arco.",
+  "cues": [
+   "Allungati verso l'alto prima di piegarti",
+   "Il bacino resta centrato",
+   "Respira nel fianco che si allunga"
+  ]
+ },
+ {
+  "id": "standing-hip-flexor",
+  "name": "Allungamento dei flessori dell'anca in piedi",
+  "searchTerm": "standing hip flexor stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "anche",
+   "flessori"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "In posizione di affondo corto, gamba dietro distesa. Stringi il gluteo della gamba dietro e porta il bacino leggermente avanti: senti l'allungamento davanti all'anca.",
+  "cues": [
+   "Bacino \"in retroversione\": coda verso il basso",
+   "Busto dritto, non inclinarti in avanti",
+   "Puoi appoggiarti alla scrivania"
+  ]
+ },
+ {
+  "id": "standing-hamstring",
+  "name": "Allungamento femorali in piedi",
+  "searchTerm": "standing hamstring stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "femorali"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Tallone su un gradino o una sedia bassa, gamba quasi distesa. Piegati in avanti dalle anche, schiena lunga, finché senti tirare dietro la coscia.",
+  "cues": [
+   "Schiena lunga, non arrotondata",
+   "Punta del piede verso di te per aumentare",
+   "Ginocchio leggermente morbido"
+  ]
+ },
+ {
+  "id": "seated-figure-four",
+  "name": "Allungamento gluteo da seduto (figura 4)",
+  "searchTerm": "seated figure four stretch",
+  "categories": [
+   "desk",
+   "mobility"
+  ],
+  "targets": [
+   "glutei",
+   "anche"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Seduto, appoggia la caviglia sul ginocchio opposto. Schiena dritta, inclina il busto in avanti finché senti allungare il gluteo.",
+  "cues": [
+   "Piega dalle anche, non dalla schiena",
+   "Il ginocchio sopra può scendere dolcemente",
+   "Respira profondo"
+  ],
+  "caution": "Se il ginocchio dà fastidio, appoggia la caviglia più in basso sullo stinco."
+ },
+ {
+  "id": "calf-raise",
+  "name": "Sollevamenti sulle punte",
+  "searchTerm": "calf raises",
+  "categories": [
+   "desk",
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "polpacci",
+   "caviglie"
+  ],
+  "position": "in piedi",
+  "description": "In piedi, sali sulle punte in modo controllato e scendi lentamente. Riattiva la circolazione dopo tanto tempo seduto.",
+  "cues": [
+   "Sali in 1 secondo, scendi in 2",
+   "Il peso sull'alluce e sul secondo dito",
+   "Tieniti alla scrivania se serve"
+  ],
+  "harder": "Su una gamba sola, o dal bordo di un gradino."
+ },
+ {
+  "id": "sit-to-stand",
+  "name": "Alzate dalla sedia",
+  "searchTerm": "sit to stand exercise",
+  "categories": [
+   "desk",
+   "calisthenics",
+   "recovery"
+  ],
+  "targets": [
+   "gambe",
+   "glutei"
+  ],
+  "position": "in piedi",
+  "description": "Dalla sedia, alzati senza usare le mani e torna a sederti lentamente, sfiorando la seduta.",
+  "cues": [
+   "Piedi alla larghezza delle anche",
+   "Busto leggermente in avanti, spingi dai talloni",
+   "Scendi in 3 secondi"
+  ],
+  "harder": "Non sederti: sfiora la sedia e risali."
+ },
+ {
+  "id": "wrist-stretch",
+  "name": "Allungamento polsi e avambracci",
+  "searchTerm": "wrist flexor extensor stretch",
+  "categories": [
+   "desk",
+   "mobility",
+   "calisthenics"
+  ],
+  "targets": [
+   "polsi",
+   "avambracci"
+  ],
+  "position": "seduto",
+  "perSide": true,
+  "description": "Braccio disteso davanti, palmo in su: con l'altra mano porta le dita verso il basso. Poi palmo in giù e porta il dorso della mano verso di te.",
+  "cues": [
+   "Gomito disteso ma non bloccato",
+   "Allungamento dolce, 15 secondi per posizione",
+   "Alterna i due lati"
+  ]
+ },
+ {
+  "id": "arm-circles",
+  "name": "Circonduzioni delle braccia",
+  "searchTerm": "arm circles",
+  "categories": [
+   "desk",
+   "mobility",
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "spalle"
+  ],
+  "position": "in piedi",
+  "description": "Braccia tese lateralmente, disegna cerchi da piccoli a grandi, prima in avanti poi indietro.",
+  "cues": [
+   "Parti piccolo e allarga poco a poco",
+   "Spalle basse",
+   "Respiro regolare"
+  ]
+ },
+ {
+  "id": "march-in-place",
+  "name": "Marcia sul posto",
+  "searchTerm": "marching in place",
+  "categories": [
+   "desk",
+   "recovery",
+   "calisthenics"
+  ],
+  "targets": [
+   "cardio",
+   "anche"
+  ],
+  "position": "in piedi",
+  "description": "Marcia sul posto portando le ginocchia verso l'alto e muovendo le braccia in modo coordinato. Riattiva il corpo.",
+  "cues": [
+   "Busto alto",
+   "Atterra morbido sull'avampiede",
+   "Aumenta il ritmo negli ultimi secondi"
+  ]
+ },
+ {
+  "id": "thread-the-needle",
+  "name": "Infila l'ago",
+  "searchTerm": "thread the needle stretch",
+  "categories": [
+   "mobility",
+   "yoga",
+   "surf",
+   "recovery"
+  ],
+  "targets": [
+   "dorsale",
+   "spalle"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "In quadrupedia, fai scivolare un braccio sotto il petto verso il lato opposto, appoggiando spalla e tempia a terra. Torna su e apri lo stesso braccio verso il soffitto.",
+  "cues": [
+   "Il bacino resta sopra le ginocchia",
+   "Segui la mano con lo sguardo",
+   "Espira scendendo, inspira aprendo"
+  ]
+ },
+ {
+  "id": "open-book",
+  "name": "Libro aperto",
+  "searchTerm": "open book thoracic rotation",
+  "categories": [
+   "mobility",
+   "surf",
+   "recovery"
+  ],
+  "targets": [
+   "dorsale",
+   "petto"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Sdraiato su un fianco, ginocchia piegate a 90° davanti a te, braccia distese insieme. Apri il braccio sopra come la pagina di un libro, ruotando il busto, e riportalo.",
+  "cues": [
+   "Le ginocchia restano unite e appoggiate",
+   "Lo sguardo segue la mano",
+   "Espira mentre apri"
+  ]
+ },
+ {
+  "id": "hip-90-90",
+  "name": "Mobilità 90/90 delle anche",
+  "searchTerm": "90 90 hip mobility",
+  "categories": [
+   "mobility",
+   "surf",
+   "recovery"
+  ],
+  "targets": [
+   "anche"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Seduto a terra con una gamba davanti e una di lato, entrambe piegate a 90°. Busto alto, inclinati verso la gamba davanti, poi ruota le ginocchia dall'altra parte.",
+  "cues": [
+   "Aiutati con le mani dietro se serve",
+   "Busto lungo",
+   "Transizioni lente tra un lato e l'altro"
+  ],
+  "easier": "Appoggia un cuscino sotto il gluteo."
+ },
+ {
+  "id": "worlds-greatest-stretch",
+  "name": "Affondo con torsione (miglior allungamento)",
+  "searchTerm": "worlds greatest stretch",
+  "categories": [
+   "mobility",
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "anche",
+   "dorsale",
+   "femorali"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Affondo lungo, mano interna a terra accanto al piede davanti. Porta il gomito verso la caviglia, poi apri il braccio verso il cielo ruotando il busto.",
+  "cues": [
+   "Gamba dietro attiva e distesa",
+   "Il ginocchio dietro può appoggiare se serve",
+   "Ruota dal petto, non solo dal braccio"
+  ]
+ },
+ {
+  "id": "diaphragmatic-breathing",
+  "name": "Respirazione diaframmatica",
+  "searchTerm": "diaphragmatic breathing",
+  "categories": [
+   "desk",
+   "recovery",
+   "yoga",
+   "pilates"
+  ],
+  "targets": [
+   "respiro"
+  ],
+  "position": "seduto",
+  "description": "Una mano sul petto e una sulla pancia. Inspira dal naso gonfiando la pancia e le costole di lato, espira lentamente dalla bocca. Il petto si muove poco.",
+  "cues": [
+   "Inspira in 4 secondi, espira in 6",
+   "Spalle rilassate",
+   "Lascia andare la tensione della mascella"
+  ]
+ },
+ {
+  "id": "child-pose",
+  "name": "Posizione del bambino (Balasana)",
+  "searchTerm": "child pose yoga",
+  "categories": [
+   "yoga",
+   "recovery",
+   "mobility"
+  ],
+  "targets": [
+   "schiena",
+   "anche"
+  ],
+  "position": "a terra",
+  "description": "Ginocchia a terra e aperte, glutei verso i talloni, busto adagiato tra le cosce e fronte a terra. Braccia distese avanti o lungo il corpo.",
+  "cues": [
+   "Respira nella schiena",
+   "Fronte appoggiata, collo rilassato",
+   "Braccia avanti per allungare anche le spalle"
+  ],
+  "easier": "Cuscino tra glutei e talloni o sotto la fronte."
+ },
+ {
+  "id": "cat-cow",
+  "name": "Gatto-mucca",
+  "searchTerm": "cat cow yoga",
+  "categories": [
+   "yoga",
+   "pilates",
+   "mobility",
+   "recovery"
+  ],
+  "targets": [
+   "colonna"
+  ],
+  "position": "a terra",
+  "description": "In quadrupedia, mani sotto le spalle e ginocchia sotto le anche. Inspirando lascia scendere la pancia e apri il petto; espirando arrotonda la schiena spingendo il pavimento.",
+  "cues": [
+   "Una vertebra alla volta",
+   "Movimento guidato dal respiro",
+   "Spingi bene il pavimento nella fase \"gatto\""
+  ]
+ },
+ {
+  "id": "downward-dog",
+  "name": "Cane a testa in giù",
+  "searchTerm": "downward facing dog",
+  "categories": [
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "femorali",
+   "polpacci",
+   "spalle"
+  ],
+  "position": "a terra",
+  "description": "Da quadrupedia, solleva il bacino in alto e indietro formando una V rovesciata. Mani spinte a terra, schiena lunga; i talloni non devono per forza toccare terra.",
+  "cues": [
+   "Priorità alla schiena lunga: piega le ginocchia se serve",
+   "Allontana le spalle dalle orecchie",
+   "Pedala alternando i talloni per sciogliere i polpacci"
+  ],
+  "easier": "Mani su una sedia o sul bordo di un divano.",
+  "caution": "Evita con dolore ai polsi acuto: appoggia gli avambracci (delfino)."
+ },
+ {
+  "id": "low-lunge",
+  "name": "Affondo basso (Anjaneyasana)",
+  "searchTerm": "low lunge yoga",
+  "categories": [
+   "yoga",
+   "mobility",
+   "surf"
+  ],
+  "targets": [
+   "flessori",
+   "anche"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Da affondo, appoggia il ginocchio dietro a terra. Porta il bacino avanti e in basso, busto alto, braccia in alto o mani sulla coscia.",
+  "cues": [
+   "Ginocchio davanti sopra la caviglia",
+   "Coda verso il basso per sentire i flessori",
+   "Cuscino sotto il ginocchio dietro"
+  ]
+ },
+ {
+  "id": "warrior-1",
+  "name": "Guerriero I",
+  "searchTerm": "warrior 1 pose",
+  "categories": [
+   "yoga"
+  ],
+  "targets": [
+   "gambe",
+   "anche",
+   "spalle"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Piedi a un passo lungo, piede dietro ruotato di circa 45°. Piega il ginocchio davanti, bacino orientato in avanti, braccia in alto.",
+  "cues": [
+   "Tallone dietro ben piantato",
+   "Ginocchio davanti in linea con il secondo dito",
+   "Spalle rilassate anche con le braccia in alto"
+  ]
+ },
+ {
+  "id": "warrior-2",
+  "name": "Guerriero II",
+  "searchTerm": "warrior 2 pose",
+  "categories": [
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "anche"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Gambe molto aperte, piede davanti verso avanti e piede dietro parallelo al lato corto del tappetino. Piega il ginocchio davanti e apri le braccia in linea, sguardo oltre la mano davanti. Ricorda la posizione sulla tavola.",
+  "cues": [
+   "Ginocchio davanti sopra la caviglia, rivolto verso il mignolo",
+   "Busto in verticale tra le gambe",
+   "Braccia attive fino alla punta delle dita"
+  ]
+ },
+ {
+  "id": "triangle",
+  "name": "Triangolo (Trikonasana)",
+  "searchTerm": "triangle pose",
+  "categories": [
+   "yoga"
+  ],
+  "targets": [
+   "fianchi",
+   "femorali"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Da gambe larghe come nel Guerriero II ma distese, allunga il busto verso il piede davanti e appoggia la mano su stinco, blocco o sedia. L'altro braccio sale verso il cielo.",
+  "cues": [
+   "Allunga prima, poi scendi",
+   "Petto aperto verso il lato",
+   "Non bloccare il ginocchio davanti"
+  ],
+  "easier": "Mano su un blocco o sulla coscia."
+ },
+ {
+  "id": "tree",
+  "name": "Albero (Vrksasana)",
+  "searchTerm": "tree pose",
+  "categories": [
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "equilibrio",
+   "caviglie"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "In equilibrio su una gamba, appoggia la pianta dell'altro piede sulla caviglia, sul polpaccio o sull'interno coscia (mai sul ginocchio). Mani al petto o in alto.",
+  "cues": [
+   "Fissa un punto davanti a te",
+   "Spingi il piede nella gamba e la gamba nel piede",
+   "Bacino livellato"
+  ],
+  "easier": "Punta del piede a terra, tallone sulla caviglia.",
+  "harder": "Occhi chiusi per qualche secondo."
+ },
+ {
+  "id": "cobra",
+  "name": "Cobra (Bhujangasana)",
+  "searchTerm": "cobra pose",
+  "categories": [
+   "yoga",
+   "surf",
+   "recovery"
+  ],
+  "targets": [
+   "colonna",
+   "petto"
+  ],
+  "position": "a terra",
+  "description": "Prono, mani sotto le spalle, gomiti vicini al corpo. Spingi leggermente per sollevare il petto, pube a terra, gomiti morbidi.",
+  "cues": [
+   "Solleva con la schiena, le mani aiutano",
+   "Spalle lontane dalle orecchie",
+   "Guarda avanti, non in alto"
+  ],
+  "caution": "Fermati prima di qualsiasi fastidio lombare."
+ },
+ {
+  "id": "sphinx",
+  "name": "Sfinge",
+  "searchTerm": "sphinx pose",
+  "categories": [
+   "yoga",
+   "recovery",
+   "surf"
+  ],
+  "targets": [
+   "colonna",
+   "petto"
+  ],
+  "position": "a terra",
+  "description": "Prono, avambracci a terra con i gomiti sotto le spalle. Spingi gli avambracci per allungare la colonna e aprire il petto. È la posizione di remata \"in pausa\".",
+  "cues": [
+   "Pube e gambe pesanti a terra",
+   "Petto avanti, non solo in su",
+   "Respira lento"
+  ]
+ },
+ {
+  "id": "bridge-pose",
+  "name": "Ponte (Setu Bandha)",
+  "searchTerm": "bridge pose yoga",
+  "categories": [
+   "yoga",
+   "recovery"
+  ],
+  "targets": [
+   "glutei",
+   "colonna",
+   "petto"
+  ],
+  "position": "a terra",
+  "description": "Supino, piedi a terra vicino ai glutei. Solleva il bacino e mantieni, mani intrecciate sotto la schiena o lungo il corpo.",
+  "cues": [
+   "Ginocchia parallele",
+   "Spingi dai talloni",
+   "Collo libero: non girare la testa"
+  ]
+ },
+ {
+  "id": "supported-pigeon",
+  "name": "Piccione supportato",
+  "searchTerm": "pigeon pose modified",
+  "categories": [
+   "yoga",
+   "mobility",
+   "recovery",
+   "surf"
+  ],
+  "targets": [
+   "glutei",
+   "anche"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Da quadrupedia porta un ginocchio verso la mano dello stesso lato e lo stinco in diagonale, gamba dietro distesa. Cuscino sotto il gluteo davanti se non arriva a terra.",
+  "cues": [
+   "Bacino il più possibile dritto",
+   "Busto alto o appoggiato sugli avambracci",
+   "Nessun dolore al ginocchio: in caso, usa la figura 4 da supino"
+  ]
+ },
+ {
+  "id": "seated-forward-fold",
+  "name": "Piegamento in avanti da seduto",
+  "searchTerm": "seated forward fold",
+  "categories": [
+   "yoga",
+   "pilates",
+   "recovery"
+  ],
+  "targets": [
+   "femorali",
+   "schiena"
+  ],
+  "position": "a terra",
+  "description": "Seduto a gambe distese, ginocchia anche piegate, allungati verso l'alto e poi piegati in avanti dalle anche.",
+  "cues": [
+   "Schiena lunga prima di scendere",
+   "Ginocchia morbide se i femorali tirano",
+   "Rilascia il collo alla fine"
+  ],
+  "easier": "Siediti su un cuscino."
+ },
+ {
+  "id": "supine-twist",
+  "name": "Torsione da supino",
+  "searchTerm": "supine spinal twist",
+  "categories": [
+   "yoga",
+   "recovery",
+   "mobility",
+   "desk"
+  ],
+  "targets": [
+   "colonna",
+   "glutei"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Supino, porta le ginocchia al petto e lasciale cadere da un lato, braccia aperte a T. Sguardo verso il lato opposto.",
+  "cues": [
+   "Le spalle restano a terra",
+   "Cuscino sotto le ginocchia se non arrivano",
+   "Rilassati a ogni espirazione"
+  ]
+ },
+ {
+  "id": "happy-baby",
+  "name": "Bambino felice",
+  "searchTerm": "happy baby pose",
+  "categories": [
+   "yoga",
+   "recovery"
+  ],
+  "targets": [
+   "anche",
+   "schiena"
+  ],
+  "position": "a terra",
+  "description": "Supino, ginocchia verso le ascelle, afferra i piedi (o gli stinchi) con le piante verso il soffitto. Dondola leggermente.",
+  "cues": [
+   "Sacro verso terra",
+   "Collo rilassato",
+   "Dondola lateralmente per massaggiare la schiena"
+  ]
+ },
+ {
+  "id": "legs-up-wall",
+  "name": "Gambe al muro",
+  "searchTerm": "legs up the wall",
+  "categories": [
+   "yoga",
+   "recovery"
+  ],
+  "targets": [
+   "recupero"
+  ],
+  "position": "a terra",
+  "description": "Sdraiato con i glutei vicini al muro e le gambe appoggiate in verticale. Braccia rilassate, respiro lento.",
+  "cues": [
+   "Cuscino sotto il bacino se piace",
+   "Occhi chiusi",
+   "Ottima a fine giornata"
+  ]
+ },
+ {
+  "id": "savasana",
+  "name": "Rilassamento finale (Savasana)",
+  "searchTerm": "savasana",
+  "categories": [
+   "yoga",
+   "pilates",
+   "recovery"
+  ],
+  "targets": [
+   "recupero"
+  ],
+  "position": "a terra",
+  "description": "Supino, gambe e braccia rilassate, palmi in su. Lascia il corpo pesante e porta l'attenzione al respiro.",
+  "cues": [
+   "Nessuno sforzo",
+   "Scansiona il corpo dalla testa ai piedi",
+   "Se arrivano pensieri, torna al respiro"
+  ]
+ },
+ {
+  "id": "mountain",
+  "name": "Montagna (Tadasana)",
+  "searchTerm": "mountain pose",
+  "categories": [
+   "yoga"
+  ],
+  "targets": [
+   "postura"
+  ],
+  "position": "in piedi",
+  "description": "In piedi, piedi uniti o alla larghezza del bacino, peso distribuito. Cresci in altezza con spalle rilassate e respiro calmo.",
+  "cues": [
+   "Peso su tallone, alluce e mignolo",
+   "Ginocchia sbloccate",
+   "Mento parallelo al pavimento"
+  ]
+ },
+ {
+  "id": "chair-pose",
+  "name": "Sedia (Utkatasana)",
+  "searchTerm": "chair pose",
+  "categories": [
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "glutei"
+  ],
+  "position": "in piedi",
+  "description": "Piedi uniti o larghi come il bacino, piega le ginocchia come per sederti su una sedia, braccia in alto o avanti.",
+  "cues": [
+   "Peso sui talloni",
+   "Ginocchia dietro le punte",
+   "Busto lungo in leggera inclinazione"
+  ]
+ },
+ {
+  "id": "sun-salutation",
+  "name": "Saluto al sole (versione semplice)",
+  "searchTerm": "sun salutation A beginner",
+  "categories": [
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "tutto il corpo"
+  ],
+  "position": "in piedi",
+  "description": "Sequenza a ritmo di respiro: montagna con braccia in alto, piegamento avanti, mezzo sollevamento, plank o ginocchia a terra, cobra, cane a testa in giù, ritorno in piedi. Ripeti la sequenza per il tempo indicato.",
+  "cues": [
+   "Un movimento per ogni inspirazione o espirazione",
+   "Ginocchia a terra nel passaggio a terra, senza fretta",
+   "Ogni giro un po' più fluido"
+  ],
+  "easier": "Resta 2 respiri in ogni posizione invece di scorrere."
+ },
+ {
+  "id": "garland",
+  "name": "Accosciata (Malasana)",
+  "searchTerm": "garland pose malasana",
+  "categories": [
+   "yoga",
+   "mobility",
+   "surf"
+  ],
+  "targets": [
+   "anche",
+   "caviglie"
+  ],
+  "position": "in piedi",
+  "description": "Accosciata profonda con i piedi un po' più larghi del bacino, mani al petto e gomiti che spingono dolcemente le ginocchia verso l'esterno.",
+  "cues": [
+   "Talloni a terra se possibile, altrimenti su un asciugamano arrotolato",
+   "Petto aperto",
+   "Respira nel bacino"
+  ],
+  "easier": "Siediti su un blocco o un libro spesso."
+ },
+ {
+  "id": "pelvic-tilt",
+  "name": "Basculamento del bacino",
+  "searchTerm": "pelvic tilt exercise",
+  "categories": [
+   "pilates",
+   "recovery",
+   "desk"
+  ],
+  "targets": [
+   "addome",
+   "lombare"
+  ],
+  "position": "a terra",
+  "description": "Supino a ginocchia piegate. Espirando porta la zona lombare verso il pavimento attivando l'addome basso; inspirando torna in posizione neutra.",
+  "cues": [
+   "Movimento piccolo",
+   "Glutei rilassati: lavora l'addome",
+   "Coordina con il respiro"
+  ]
+ },
+ {
+  "id": "hundred",
+  "name": "I cento (modificato)",
+  "searchTerm": "pilates hundred modified",
+  "categories": [
+   "pilates"
+  ],
+  "targets": [
+   "addome"
+  ],
+  "position": "a terra",
+  "description": "Supino, gambe a \"tavolino\" (ginocchia sopra le anche, stinchi paralleli al pavimento). Solleva testa e spalle, braccia tese a lato del corpo che pompano su e giù: inspira per 5 pompate, espira per 5.",
+  "cues": [
+   "Sguardo verso le ginocchia, collo lungo",
+   "Lombare stabile",
+   "Se il collo si stanca, appoggia la testa"
+  ],
+  "easier": "Piedi a terra e testa appoggiata.",
+  "harder": "Gambe distese a 45°."
+ },
+ {
+  "id": "dead-bug",
+  "name": "Dead bug",
+  "searchTerm": "dead bug exercise",
+  "categories": [
+   "pilates",
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "addome",
+   "stabilità"
+  ],
+  "position": "a terra",
+  "description": "Supino, braccia verso il soffitto e gambe a tavolino. Allunga braccio e gamba opposti verso il pavimento mantenendo la schiena ferma, poi torna e cambia.",
+  "cues": [
+   "Lombare incollata al tappetino",
+   "Espira mentre allunghi",
+   "Lento: 3 secondi per andare, 2 per tornare"
+  ],
+  "easier": "Muovi solo le gambe, tallone che sfiora terra."
+ },
+ {
+  "id": "single-leg-stretch",
+  "name": "Allungamento a una gamba",
+  "searchTerm": "pilates single leg stretch",
+  "categories": [
+   "pilates"
+  ],
+  "targets": [
+   "addome",
+   "coordinazione"
+  ],
+  "position": "a terra",
+  "description": "Supino con testa e spalle sollevate, porta un ginocchio al petto e allunga l'altra gamba in diagonale. Alterna le gambe con ritmo.",
+  "cues": [
+   "Busto fermo, si muovono le gambe",
+   "Gamba tesa più alta per facilitare",
+   "Espira ogni due cambi"
+  ]
+ },
+ {
+  "id": "roll-down",
+  "name": "Arrotolamento assistito (roll down)",
+  "searchTerm": "pilates roll down",
+  "categories": [
+   "pilates",
+   "recovery"
+  ],
+  "targets": [
+   "addome",
+   "colonna"
+  ],
+  "position": "a terra",
+  "description": "Seduto con ginocchia piegate, mani dietro le cosce. Espirando arrotola il bacino e scendi indietro vertebra per vertebra fin dove controlli, poi risali.",
+  "cues": [
+   "Mento verso lo sterno",
+   "Aiutati con le mani",
+   "Scendi solo fin dove mantieni la curva"
+  ],
+  "harder": "Scendi fino a terra e risali senza mani (roll up)."
+ },
+ {
+  "id": "bird-dog",
+  "name": "Bird dog (quadrupedia alternata)",
+  "searchTerm": "bird dog exercise",
+  "categories": [
+   "pilates",
+   "calisthenics",
+   "surf",
+   "recovery"
+  ],
+  "targets": [
+   "stabilità",
+   "glutei",
+   "schiena"
+  ],
+  "position": "a terra",
+  "description": "In quadrupedia, allunga un braccio in avanti e la gamba opposta indietro, formando una linea. Torna e cambia lato.",
+  "cues": [
+   "Bacino fermo come se avessi un bicchiere sulla schiena",
+   "Allunga, non alzare troppo",
+   "Tieni 2 secondi in allungo"
+  ]
+ },
+ {
+  "id": "side-leg-lift",
+  "name": "Slanci laterali da sdraiato",
+  "searchTerm": "side lying leg lift",
+  "categories": [
+   "pilates"
+  ],
+  "targets": [
+   "glutei",
+   "fianchi"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Sdraiato su un fianco in linea, solleva la gamba sopra tesa di un palmo e riabbassala lentamente.",
+  "cues": [
+   "Punta del piede in avanti, non verso il soffitto",
+   "Bacino fermo",
+   "Controlla la discesa"
+  ]
+ },
+ {
+  "id": "clamshell",
+  "name": "Conchiglia (clamshell)",
+  "searchTerm": "clamshell exercise",
+  "categories": [
+   "pilates",
+   "recovery",
+   "surf"
+  ],
+  "targets": [
+   "glutei",
+   "anche"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Sdraiato su un fianco con le ginocchia piegate, piedi uniti. Apri il ginocchio sopra come una conchiglia senza ruotare il bacino.",
+  "cues": [
+   "Bacino fermo, leggermente in avanti",
+   "Movimento dal gluteo",
+   "Chiudi lentamente"
+  ]
+ },
+ {
+  "id": "pilates-swimming",
+  "name": "Nuoto (swimming)",
+  "searchTerm": "pilates swimming",
+  "categories": [
+   "pilates",
+   "surf"
+  ],
+  "targets": [
+   "schiena",
+   "glutei",
+   "spalle"
+  ],
+  "position": "a terra",
+  "description": "Prono, braccia avanti. Solleva leggermente braccia, petto e gambe e alterna piccoli battiti di braccio e gamba opposti, come nuotando.",
+  "cues": [
+   "Collo lungo, sguardo al pavimento",
+   "Addome attivo per proteggere la zona lombare",
+   "Battiti piccoli e rapidi"
+  ],
+  "easier": "Solleva un braccio e la gamba opposta alla volta, lentamente."
+ },
+ {
+  "id": "swan-prep",
+  "name": "Preparazione al cigno",
+  "searchTerm": "pilates swan prep",
+  "categories": [
+   "pilates",
+   "surf"
+  ],
+  "targets": [
+   "schiena",
+   "petto"
+  ],
+  "position": "a terra",
+  "description": "Prono con le mani vicino alle spalle. Allunga la colonna e solleva il petto guidando con lo sterno, poi scendi allungandoti in avanti.",
+  "cues": [
+   "Pube a terra",
+   "Scapole verso il basso",
+   "Muovi una vertebra alla volta"
+  ]
+ },
+ {
+  "id": "spine-stretch",
+  "name": "Allungamento della colonna in avanti",
+  "searchTerm": "pilates spine stretch forward",
+  "categories": [
+   "pilates",
+   "recovery"
+  ],
+  "targets": [
+   "colonna",
+   "femorali"
+  ],
+  "position": "a terra",
+  "description": "Seduto a gambe divaricate, busto alto. Espirando arrotola la colonna in avanti come per superare un pallone, inspirando risali impilando le vertebre.",
+  "cues": [
+   "Bacino verticale, siediti su un cuscino se serve",
+   "L'addome si svuota scendendo",
+   "Risali lentamente"
+  ]
+ },
+ {
+  "id": "leg-circles",
+  "name": "Cerchi con la gamba",
+  "searchTerm": "pilates single leg circles",
+  "categories": [
+   "pilates",
+   "mobility"
+  ],
+  "targets": [
+   "anche",
+   "addome"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Supino, una gamba verso il soffitto e l'altra distesa o piegata a terra. Disegna piccoli cerchi con la gamba sollevata mantenendo il bacino fermo.",
+  "cues": [
+   "Cerchi piccoli e precisi",
+   "5 in un senso, 5 nell'altro",
+   "Gamba sollevata anche piegata va bene"
+  ]
+ },
+ {
+  "id": "saw",
+  "name": "Sega (saw)",
+  "searchTerm": "pilates saw exercise",
+  "categories": [
+   "pilates",
+   "surf"
+  ],
+  "targets": [
+   "colonna",
+   "femorali",
+   "rotazione"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Seduto a gambe divaricate, braccia aperte. Ruota il busto e allunga la mano verso il piede opposto come a \"segarne\" il mignolo, poi torna al centro.",
+  "cues": [
+   "Ruota prima, poi piegati",
+   "Bacino fermo e ben seduto",
+   "Espira mentre ti allunghi"
+  ]
+ },
+ {
+  "id": "toe-taps",
+  "name": "Tocchi del tallone",
+  "searchTerm": "pilates toe taps",
+  "categories": [
+   "pilates",
+   "recovery"
+  ],
+  "targets": [
+   "addome basso"
+  ],
+  "position": "a terra",
+  "description": "Supino con le gambe a tavolino, abbassa un piede alla volta a sfiorare il pavimento e riportalo su, senza muovere la schiena.",
+  "cues": [
+   "Lombare stabile",
+   "Movimento dall'anca",
+   "Espira mentre scendi"
+  ]
+ },
+ {
+  "id": "side-kick-kneeling",
+  "name": "Calci laterali in ginocchio",
+  "searchTerm": "pilates kneeling side kick",
+  "categories": [
+   "pilates"
+  ],
+  "targets": [
+   "fianchi",
+   "glutei",
+   "equilibrio"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "In ginocchio, appoggia una mano a terra di lato e distendi la gamba opposta. Portala avanti e indietro controllando il busto.",
+  "cues": [
+   "Busto lungo e stabile",
+   "Movimento dalla anca",
+   "Braccio a terra attivo"
+  ]
+ },
+ {
+  "id": "wall-push-up",
+  "name": "Piegamenti al muro",
+  "searchTerm": "wall push up",
+  "categories": [
+   "calisthenics",
+   "recovery"
+  ],
+  "targets": [
+   "petto",
+   "tricipiti",
+   "spalle"
+  ],
+  "position": "in piedi",
+  "description": "Mani al muro all'altezza delle spalle, corpo inclinato in linea. Piega i gomiti avvicinando il petto al muro e spingi via.",
+  "cues": [
+   "Corpo rigido dalla testa ai talloni",
+   "Gomiti a circa 45° dal busto",
+   "Più ti allontani dal muro, più è difficile"
+  ]
+ },
+ {
+  "id": "incline-push-up",
+  "name": "Piegamenti inclinati",
+  "searchTerm": "incline push up",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "petto",
+   "tricipiti",
+   "spalle"
+  ],
+  "position": "in piedi",
+  "equipment": [
+   "tavolo o bancone"
+  ],
+  "description": "Mani su un tavolo, un bancone o il bordo del divano, corpo in linea. Scendi con il petto verso il bordo e risali.",
+  "cues": [
+   "Addome e glutei attivi",
+   "Scendi in 2 secondi",
+   "Più basso il piano, più è difficile"
+  ]
+ },
+ {
+  "id": "knee-push-up",
+  "name": "Piegamenti sulle ginocchia",
+  "searchTerm": "knee push up",
+  "categories": [
+   "calisthenics"
+  ],
+  "targets": [
+   "petto",
+   "tricipiti"
+  ],
+  "position": "a terra",
+  "description": "A terra con ginocchia appoggiate, linea dritta ginocchia-spalle. Scendi con il petto tra le mani e spingi.",
+  "cues": [
+   "Anche in linea, non piegate",
+   "Petto che arriva quasi a terra",
+   "Gomiti che puntano indietro in diagonale"
+  ]
+ },
+ {
+  "id": "push-up",
+  "name": "Piegamenti",
+  "searchTerm": "push up proper form",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "petto",
+   "tricipiti",
+   "addome"
+  ],
+  "position": "a terra",
+  "description": "In plank sulle mani, corpo in linea. Scendi finché il petto è vicino a terra e spingi via il pavimento.",
+  "cues": [
+   "Glutei stretti, addome attivo",
+   "Gomiti a 45°",
+   "Ultima ripetizione pulita come la prima"
+  ],
+  "easier": "Piegamenti sulle ginocchia o inclinati.",
+  "harder": "Piedi rialzati o discesa in 4 secondi."
+ },
+ {
+  "id": "inverted-row",
+  "name": "Rematore inverso",
+  "searchTerm": "inverted row table",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "dorsali",
+   "bicipiti",
+   "scapole"
+  ],
+  "position": "a terra",
+  "equipment": [
+   "tavolo robusto o sbarra bassa"
+  ],
+  "description": "Sotto un tavolo molto robusto o una sbarra bassa, afferra il bordo e tira il petto verso di esso mantenendo il corpo dritto.",
+  "cues": [
+   "Scapole che si chiudono per prime",
+   "Corpo rigido",
+   "Ginocchia piegate per facilitare"
+  ],
+  "easier": "Busto più verticale (piedi più vicini) o asciugamano attorno a un palo robusto.",
+  "caution": "Verifica che il tavolo regga il tuo peso e non si ribalti. Se non sei sicuro, usa Y-T-W a terra."
+ },
+ {
+  "id": "dead-hang",
+  "name": "Sospensione alla sbarra",
+  "searchTerm": "dead hang",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "presa",
+   "spalle"
+  ],
+  "position": "sbarra",
+  "equipment": [
+   "sbarra"
+  ],
+  "description": "Appeso alla sbarra con braccia distese. Mantieni le spalle \"attive\", lontane dalle orecchie.",
+  "cues": [
+   "Presa salda con tutta la mano",
+   "Addome attivo, gambe ferme",
+   "Piedi a terra per alleggerire se serve"
+  ]
+ },
+ {
+  "id": "scapular-pull",
+  "name": "Trazioni scapolari",
+  "searchTerm": "scapular pull up",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "scapole",
+   "dorsali"
+  ],
+  "position": "sbarra",
+  "equipment": [
+   "sbarra"
+  ],
+  "description": "Appeso alla sbarra a braccia tese, abbassa le scapole sollevando il corpo di pochi centimetri senza piegare i gomiti, poi rilascia.",
+  "cues": [
+   "Gomiti distesi",
+   "Movimento piccolo",
+   "Controlla la discesa"
+  ]
+ },
+ {
+  "id": "negative-pull-up",
+  "name": "Trazioni negative",
+  "searchTerm": "negative pull up",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "dorsali",
+   "bicipiti"
+  ],
+  "position": "sbarra",
+  "equipment": [
+   "sbarra"
+  ],
+  "description": "Parti in alto con il mento sopra la sbarra (salta o usa una sedia) e scendi il più lentamente possibile fino a braccia tese.",
+  "cues": [
+   "Discesa in 4-5 secondi",
+   "Petto verso la sbarra",
+   "Rimetti i piedi sulla sedia per risalire"
+  ],
+  "caution": "Usa un appoggio stabile per salire."
+ },
+ {
+  "id": "squat",
+  "name": "Squat",
+  "searchTerm": "bodyweight squat",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "glutei"
+  ],
+  "position": "in piedi",
+  "description": "Piedi poco più larghi delle anche, scendi come per sederti tra i talloni mantenendo il petto alto, poi risali spingendo il pavimento.",
+  "cues": [
+   "Ginocchia in linea con le punte",
+   "Talloni a terra",
+   "Scendi fin dove la schiena resta neutra"
+  ],
+  "easier": "Alzate dalla sedia.",
+  "harder": "Discesa in 4 secondi o pausa di 2 secondi in basso."
+ },
+ {
+  "id": "split-squat",
+  "name": "Squat a gambe divise",
+  "searchTerm": "split squat",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "quadricipiti",
+   "glutei"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Un passo lungo, piede dietro sulle punte. Scendi in verticale finché il ginocchio dietro sfiora terra e risali. Tutte le ripetizioni da un lato, poi dall'altro.",
+  "cues": [
+   "Busto alto",
+   "Peso sul piede davanti",
+   "Tieniti al muro per l'equilibrio all'inizio"
+  ],
+  "harder": "Piede dietro su una sedia (bulgaro)."
+ },
+ {
+  "id": "reverse-lunge",
+  "name": "Affondo indietro",
+  "searchTerm": "reverse lunge",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "glutei",
+   "equilibrio"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Dalla posizione in piedi fai un passo indietro e scendi in affondo, poi torna spingendo con il piede davanti.",
+  "cues": [
+   "Passo abbastanza lungo",
+   "Ginocchio davanti stabile",
+   "Rialzati con controllo"
+  ]
+ },
+ {
+  "id": "glute-bridge",
+  "name": "Ponte glutei",
+  "searchTerm": "glute bridge",
+  "categories": [
+   "calisthenics",
+   "pilates",
+   "recovery",
+   "surf"
+  ],
+  "targets": [
+   "glutei",
+   "femorali"
+  ],
+  "position": "a terra",
+  "description": "Supino a ginocchia piegate, spingi i talloni e solleva il bacino fino a formare una linea spalle-ginocchia. Stringi i glutei in alto.",
+  "cues": [
+   "Costole giù, non inarcare",
+   "Pausa di 1-2 secondi in alto",
+   "Scendi lentamente"
+  ],
+  "harder": "Su una gamba sola."
+ },
+ {
+  "id": "single-leg-bridge",
+  "name": "Ponte glutei su una gamba",
+  "searchTerm": "single leg glute bridge",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "glutei",
+   "femorali"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Come il ponte glutei, ma con una gamba distesa in alto. Solleva il bacino spingendo con il tallone a terra.",
+  "cues": [
+   "Bacino livellato",
+   "Spinta dal tallone",
+   "Controlla la discesa"
+  ]
+ },
+ {
+  "id": "plank",
+  "name": "Plank",
+  "searchTerm": "plank proper form",
+  "categories": [
+   "calisthenics",
+   "pilates",
+   "yoga",
+   "surf"
+  ],
+  "targets": [
+   "addome",
+   "spalle"
+  ],
+  "position": "a terra",
+  "description": "Sugli avambracci e sulle punte dei piedi, corpo in linea dalla testa ai talloni. Respira mantenendo la posizione.",
+  "cues": [
+   "Glutei e addome attivi",
+   "Spingi il pavimento con gli avambracci",
+   "Collo in linea"
+  ],
+  "easier": "Ginocchia a terra.",
+  "harder": "Solleva alternativamente un piede."
+ },
+ {
+  "id": "side-plank",
+  "name": "Plank laterale",
+  "searchTerm": "side plank",
+  "categories": [
+   "calisthenics",
+   "pilates",
+   "surf"
+  ],
+  "targets": [
+   "obliqui",
+   "fianchi",
+   "spalle"
+  ],
+  "position": "a terra",
+  "perSide": true,
+  "description": "Su un avambraccio, gomito sotto la spalla, corpo di lato in linea. Solleva il bacino e mantieni.",
+  "cues": [
+   "Bacino alto",
+   "Spalla lontana dall'orecchio",
+   "Petto aperto"
+  ],
+  "easier": "Ginocchia piegate a terra."
+ },
+ {
+  "id": "hollow-hold",
+  "name": "Hollow hold",
+  "searchTerm": "hollow body hold",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "addome"
+  ],
+  "position": "a terra",
+  "description": "Supino, zona lombare a terra. Solleva spalle e gambe formando una \"banana\" e mantieni.",
+  "cues": [
+   "Lombare incollata: è la regola numero uno",
+   "Più braccia e gambe sono lontane, più è difficile",
+   "Respira corto ma regolare"
+  ],
+  "easier": "Ginocchia piegate e braccia lungo i fianchi."
+ },
+ {
+  "id": "superman",
+  "name": "Superman",
+  "searchTerm": "superman exercise",
+  "categories": [
+   "calisthenics",
+   "surf",
+   "pilates"
+  ],
+  "targets": [
+   "schiena",
+   "glutei"
+  ],
+  "position": "a terra",
+  "description": "Prono con braccia avanti, solleva contemporaneamente braccia, petto e gambe di pochi centimetri e mantieni.",
+  "cues": [
+   "Sguardo a terra",
+   "Allungati più che sollevarti",
+   "Glutei attivi"
+  ],
+  "easier": "Alterna braccio e gamba opposti."
+ },
+ {
+  "id": "pike-push-up",
+  "name": "Piegamenti a V (pike)",
+  "searchTerm": "pike push up",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "spalle",
+   "tricipiti"
+  ],
+  "position": "a terra",
+  "description": "Dalla posizione a V rovesciata (come il cane a testa in giù) piega i gomiti portando la testa verso terra davanti alle mani, poi spingi.",
+  "cues": [
+   "Bacino alto",
+   "La testa scende davanti alle mani, formando un triangolo",
+   "Gomiti non troppo aperti"
+  ],
+  "easier": "Mani su un rialzo."
+ },
+ {
+  "id": "chair-dip",
+  "name": "Dip alla sedia",
+  "searchTerm": "chair dips",
+  "categories": [
+   "calisthenics"
+  ],
+  "targets": [
+   "tricipiti",
+   "spalle"
+  ],
+  "position": "a terra",
+  "equipment": [
+   "sedia stabile"
+  ],
+  "description": "Mani sul bordo di una sedia stabile dietro di te, gambe piegate. Scendi piegando i gomiti e risali.",
+  "cues": [
+   "Spalle lontane dalle orecchie",
+   "Scendi solo fino a 90° di gomito",
+   "Sedia contro il muro"
+  ],
+  "caution": "Evita se senti dolore davanti alla spalla."
+ },
+ {
+  "id": "wall-sit",
+  "name": "Sedia al muro",
+  "searchTerm": "wall sit",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "quadricipiti"
+  ],
+  "position": "in piedi",
+  "description": "Schiena contro il muro, scendi finché le cosce sono quasi parallele al pavimento e mantieni.",
+  "cues": [
+   "Ginocchia sopra le caviglie",
+   "Schiena appoggiata",
+   "Respira"
+  ],
+  "easier": "Scendi meno."
+ },
+ {
+  "id": "step-up",
+  "name": "Salite sul gradino",
+  "searchTerm": "step up exercise",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "glutei"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "equipment": [
+   "gradino o panca stabile"
+  ],
+  "description": "Sali su un gradino o una panca stabile spingendo con la gamba sopra, poi scendi controllando.",
+  "cues": [
+   "Spinta dalla gamba sopra, non dalla gamba sotto",
+   "Ginocchio in linea",
+   "Scendi lentamente"
+  ]
+ },
+ {
+  "id": "mountain-climber",
+  "name": "Scalatore",
+  "searchTerm": "mountain climbers",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "addome",
+   "cardio"
+  ],
+  "position": "a terra",
+  "description": "In plank sulle mani, porta alternativamente le ginocchia verso il petto a ritmo sostenuto.",
+  "cues": [
+   "Spalle sopra i polsi",
+   "Bacino basso",
+   "Inizia lento, poi accelera"
+  ],
+  "easier": "Mani su un rialzo e ritmo lento."
+ },
+ {
+  "id": "jumping-jack",
+  "name": "Jumping jack",
+  "searchTerm": "jumping jacks",
+  "categories": [
+   "calisthenics"
+  ],
+  "targets": [
+   "cardio"
+  ],
+  "position": "in piedi",
+  "description": "Salta aprendo gambe e braccia, poi chiudi. Atterra morbido.",
+  "cues": [
+   "Atterraggio sulle punte",
+   "Ritmo costante",
+   "Versione senza salto: un passo di lato alla volta"
+  ],
+  "easier": "Passo laterale senza salto."
+ },
+ {
+  "id": "shoulder-taps",
+  "name": "Tocchi di spalla in plank",
+  "searchTerm": "plank shoulder taps",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "addome",
+   "spalle",
+   "stabilità"
+  ],
+  "position": "a terra",
+  "description": "In plank sulle mani, tocca con una mano la spalla opposta senza far oscillare il bacino, poi cambia.",
+  "cues": [
+   "Piedi più larghi per più stabilità",
+   "Bacino fermo",
+   "Lento e controllato"
+  ],
+  "easier": "Ginocchia a terra."
+ },
+ {
+  "id": "bear-crawl",
+  "name": "Camminata dell'orso",
+  "searchTerm": "bear crawl",
+  "categories": [
+   "calisthenics",
+   "surf"
+  ],
+  "targets": [
+   "spalle",
+   "addome",
+   "coordinazione"
+  ],
+  "position": "a terra",
+  "description": "In quadrupedia con le ginocchia sollevate di pochi centimetri, cammina avanti e indietro muovendo mano e piede opposti.",
+  "cues": [
+   "Schiena piatta",
+   "Ginocchia basse",
+   "Passi piccoli"
+  ],
+  "easier": "Tieni solo la posizione con le ginocchia sollevate (bear hold)."
+ },
+ {
+  "id": "prone-ytw",
+  "name": "Y-T-W a terra",
+  "searchTerm": "prone Y T W raises",
+  "categories": [
+   "surf",
+   "desk",
+   "calisthenics"
+  ],
+  "targets": [
+   "scapole",
+   "cuffia dei rotatori",
+   "dorsale"
+  ],
+  "position": "a terra",
+  "description": "Prono, fronte appoggiata su un asciugamano. Solleva le braccia formando una Y, poi una T, poi una W (gomiti piegati), tenendo ogni lettera 2 secondi.",
+  "cues": [
+   "Pollici verso il soffitto nella Y e nella T",
+   "Scapole verso il basso e verso la colonna",
+   "Collo rilassato: non sollevare la testa"
+  ],
+  "harder": "Tieni 5 secondi per lettera."
+ },
+ {
+  "id": "prone-paddle",
+  "name": "Remata a secco",
+  "searchTerm": "surf paddle training dry land",
+  "categories": [
+   "surf"
+  ],
+  "targets": [
+   "dorsali",
+   "spalle",
+   "schiena"
+  ],
+  "position": "a terra",
+  "description": "Prono con il petto sollevato come sulla tavola, gambe unite e rilassate. Alterna le braccia simulando la bracciata: entra lungo davanti, spingi fino al fianco, esci e riparti.",
+  "cues": [
+   "Petto leggermente sollevato, sguardo avanti",
+   "Bracciata lunga fino al fianco",
+   "Ritmo regolare, respira"
+  ],
+  "easier": "Petto appoggiato su un cuscino.",
+  "harder": "Asciugamano sotto le mani su pavimento liscio, o elastico se lo hai."
+ },
+ {
+  "id": "prone-swimmer",
+  "name": "Nuotatore a terra",
+  "searchTerm": "prone swimmers",
+  "categories": [
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "scapole",
+   "spalle",
+   "dorsale"
+  ],
+  "position": "a terra",
+  "description": "Prono con braccia avanti sollevate da terra, porta le mani dietro la schiena disegnando un arco largo e torna avanti, senza toccare terra.",
+  "cues": [
+   "Braccia sollevate per tutto il movimento",
+   "Mobilità dalla spalla, non forzare",
+   "Fronte appoggiata o appena sollevata"
+  ]
+ },
+ {
+  "id": "external-rotation-iso",
+  "name": "Rotazione esterna isometrica al muro",
+  "searchTerm": "isometric shoulder external rotation wall",
+  "categories": [
+   "surf",
+   "desk"
+  ],
+  "targets": [
+   "cuffia dei rotatori"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Di lato al muro, gomito piegato a 90° vicino al fianco e dorso della mano contro il muro (asciugamano tra gomito e fianco). Spingi la mano contro il muro al 50% della forza e mantieni.",
+  "cues": [
+   "Gomito incollato al fianco",
+   "Spinta costante, non massimale",
+   "Spalla bassa"
+  ]
+ },
+ {
+  "id": "pop-up-slow",
+  "name": "Pop-up in tre tempi",
+  "searchTerm": "surf pop up step by step",
+  "categories": [
+   "surf"
+  ],
+  "targets": [
+   "tutto il corpo",
+   "tecnica"
+  ],
+  "position": "a terra",
+  "description": "Prono con le mani accanto al petto. 1) Spingi il busto in su come un cobra. 2) Porta il piede dietro sotto il corpo. 3) Porta il piede davanti tra le mani e alzati in posizione di surf, ginocchia piegate e braccia aperte.",
+  "cues": [
+   "Mani sotto il petto, non sotto le spalle",
+   "Piede davanti al centro, tra le mani",
+   "Arriva basso e stabile, sguardo avanti"
+  ],
+  "caution": "Scegli il tuo piede avanti (regular: sinistro, goofy: destro) e resta coerente."
+ },
+ {
+  "id": "pop-up",
+  "name": "Pop-up",
+  "searchTerm": "surf pop up drill",
+  "categories": [
+   "surf"
+  ],
+  "targets": [
+   "tutto il corpo",
+   "esplosività"
+  ],
+  "position": "a terra",
+  "description": "Da prono con le mani accanto al petto, spingi forte e porta entrambi i piedi sotto di te in un unico movimento, atterrando in posizione di surf.",
+  "cues": [
+   "Spinta esplosiva delle braccia",
+   "Atterraggio silenzioso",
+   "Controlla la posizione: piedi sulla linea centrale, ginocchia piegate, sguardo avanti"
+  ],
+  "easier": "Pop-up in tre tempi.",
+  "harder": "Chiudi gli occhi all'arrivo per 2 secondi."
+ },
+ {
+  "id": "push-up-to-cobra",
+  "name": "Piegamento + cobra",
+  "searchTerm": "push up to cobra surf",
+  "categories": [
+   "surf",
+   "yoga"
+  ],
+  "targets": [
+   "petto",
+   "tricipiti",
+   "colonna"
+  ],
+  "position": "a terra",
+  "description": "Scendi a terra con un piegamento controllato (anche sulle ginocchia), poi dalla posizione prona apri il petto in un cobra e torna in plank. È il primo tempo del pop-up.",
+  "cues": [
+   "Discesa controllata",
+   "Cobra breve, poi spingi",
+   "Ginocchia a terra se serve"
+  ]
+ },
+ {
+  "id": "surf-stance-squat",
+  "name": "Squat in posizione di surf",
+  "searchTerm": "surf stance squat",
+  "categories": [
+   "surf"
+  ],
+  "targets": [
+   "gambe",
+   "equilibrio"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Piedi in posizione di surf (uno avanti, uno dietro, di lato), un po' più larghi delle spalle. Scendi e risali mantenendo il peso centrato e le braccia pronte.",
+  "cues": [
+   "Ginocchia verso l'interno della \"tavola\"",
+   "Busto sopra i piedi",
+   "Sguardo nella direzione di marcia"
+  ]
+ },
+ {
+  "id": "rotational-lunge",
+  "name": "Affondo con rotazione",
+  "searchTerm": "lunge with rotation",
+  "categories": [
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "gambe",
+   "rotazione",
+   "addome"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "Fai un affondo in avanti e ruota il busto verso la gamba davanti, braccia tese. Torna al centro e rialzati.",
+  "cues": [
+   "Ginocchio stabile mentre il busto ruota",
+   "Ruota dal petto",
+   "Espira nella rotazione"
+  ]
+ },
+ {
+  "id": "squat-jump",
+  "name": "Squat con salto",
+  "searchTerm": "squat jump",
+  "categories": [
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "gambe",
+   "esplosività"
+  ],
+  "position": "in piedi",
+  "description": "Da mezzo squat salta verso l'alto e atterra morbido tornando in squat.",
+  "cues": [
+   "Atterraggio silenzioso, ginocchia allineate",
+   "Braccia che aiutano la spinta",
+   "Recupera bene: qualità prima di quantità"
+  ],
+  "easier": "Squat veloce sulle punte senza staccare.",
+  "caution": "Solo senza dolori a ginocchia o caviglie e con muscoli già riscaldati."
+ },
+ {
+  "id": "skater-hop",
+  "name": "Saltelli laterali (pattinatore)",
+  "searchTerm": "skater hops",
+  "categories": [
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "gambe",
+   "equilibrio",
+   "esplosività"
+  ],
+  "position": "in piedi",
+  "description": "Salta di lato da un piede all'altro, atterra su una gamba e stabilizza un istante prima di ripartire.",
+  "cues": [
+   "Atterraggio morbido e controllato",
+   "Ginocchio in linea",
+   "Più distanza solo quando l'atterraggio è stabile"
+  ],
+  "easier": "Passo laterale senza salto."
+ },
+ {
+  "id": "single-leg-balance",
+  "name": "Equilibrio su una gamba",
+  "searchTerm": "single leg balance",
+  "categories": [
+   "surf",
+   "yoga",
+   "desk",
+   "recovery"
+  ],
+  "targets": [
+   "equilibrio",
+   "caviglie"
+  ],
+  "position": "in piedi",
+  "perSide": true,
+  "description": "In piedi su una gamba con il ginocchio morbido. Mantieni la stabilità; se è facile, muovi le braccia o gira la testa.",
+  "cues": [
+   "Piede \"a treppiede\": tallone, alluce, mignolo",
+   "Bacino livellato",
+   "Vicino a un muro per sicurezza"
+  ],
+  "harder": "Occhi chiusi o su un cuscino."
+ },
+ {
+  "id": "cossack-squat",
+  "name": "Squat cosacco",
+  "searchTerm": "cossack squat",
+  "categories": [
+   "surf",
+   "mobility"
+  ],
+  "targets": [
+   "anche",
+   "adduttori",
+   "gambe"
+  ],
+  "position": "in piedi",
+  "description": "Gambe molto larghe, scendi su un lato piegando il ginocchio mentre l'altra gamba resta tesa con la punta verso l'alto. Poi passa all'altro lato.",
+  "cues": [
+   "Tallone della gamba piegata a terra",
+   "Petto alto",
+   "Scendi solo quanto riesci"
+  ],
+  "easier": "Tieniti a un appoggio davanti."
+ },
+ {
+  "id": "deep-squat-hold",
+  "name": "Tenuta in squat profondo",
+  "searchTerm": "deep squat hold",
+  "categories": [
+   "surf",
+   "mobility",
+   "recovery"
+  ],
+  "targets": [
+   "anche",
+   "caviglie"
+  ],
+  "position": "in piedi",
+  "description": "Scendi in uno squat profondo e resta, aiutandoti tenendo un appoggio davanti se serve. Muoviti dolcemente da un lato all'altro.",
+  "cues": [
+   "Talloni a terra se possibile",
+   "Petto aperto",
+   "Respira e rilassati nella posizione"
+  ]
+ },
+ {
+  "id": "sprawl",
+  "name": "Sprawl",
+  "searchTerm": "sprawl exercise",
+  "categories": [
+   "surf",
+   "calisthenics"
+  ],
+  "targets": [
+   "tutto il corpo",
+   "cardio"
+  ],
+  "position": "in piedi",
+  "description": "In piedi, appoggia le mani a terra e porta indietro i piedi fino al plank, poi riporta i piedi tra le mani e rialzati. Simula il ritorno veloce sulla tavola.",
+  "cues": [
+   "Schiena neutra",
+   "Atterra morbido con i piedi",
+   "Ritmo sostenuto ma pulito"
+  ],
+  "easier": "Porta indietro un piede alla volta."
+ },
+ {
+  "id": "towel-pullover",
+  "name": "Pullover a terra con asciugamano",
+  "searchTerm": "floor towel pullover",
+  "categories": [
+   "surf"
+  ],
+  "targets": [
+   "dorsali",
+   "addome"
+  ],
+  "position": "a terra",
+  "equipment": [
+   "asciugamano"
+  ],
+  "description": "Supino a ginocchia piegate, tieni un asciugamano teso tra le mani sopra il petto. Porta le braccia dietro la testa fin dove mantieni la schiena a terra, poi tira indietro l'asciugamano verso il petto.",
+  "cues": [
+   "Asciugamano sempre teso: tira verso l'esterno",
+   "Costole giù",
+   "Lento in entrambe le direzioni"
+  ]
+ }
+]

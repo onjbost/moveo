@@ -1,0 +1,683 @@
+{
+ "id": "surf-pronto",
+ "title": "Surf: pronto per la tavola",
+ "category": "surf",
+ "level": "principiante → intermedio",
+ "summary": "Sei settimane per remare più a lungo, alzarti in piedi più velocemente e restare in equilibrio.",
+ "description": "Costruito sulle qualità che la ricerca associa alla performance nel surf: forza della parte superiore (trazione e spinta) per la remata, potenza delle gambe e velocità nel pop-up, equilibrio, rotazione del tronco e salute delle spalle (scapole e cuffia dei rotatori). Fase 1 (settimane 1-3): basi di forza e tecnica del pop-up. Fase 2 (settimane 4-6): intervalli di remata, pop-up esplosivo e pliometria leggera. Allenarsi fuori dall'acqua non sostituisce le ore in mare, ma ti fa arrivare in acqua con più resistenza e meno rischio di sovraccaricare le spalle.",
+ "goals": [
+  "Resistenza e potenza di remata",
+  "Pop-up rapido e stabile",
+  "Equilibrio e controllo in rotazione",
+  "Spalle forti e sane"
+ ],
+ "equipment": [
+  "tappetino",
+  "asciugamano",
+  "tavolo robusto o sbarra (facoltativo)"
+ ],
+ "suggestedDays": [
+  1,
+  3,
+  6
+ ],
+ "sources": [
+  {
+   "title": "Donaldson et al. 2021, Training Methods in the Sport of Surfing: A Scoping Review",
+   "url": "https://www.csusm.edu/surfresearch/documents/donaldson-2021.pdf"
+  },
+  {
+   "title": "Parsonage et al., Upper-Body Strength Measures and Pop-Up Performance of Stronger and Weaker Surfers",
+   "url": "https://www.semanticscholar.org/paper/Upper-Body-Strength-Measures-and-Pop-Up-Performance-Parsonage-Secomb/4d6a30cd7739f5c3264c68ccf271d0bb4aa5fa6e"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "remata",
+   "title": "Remata e spalle",
+   "focus": "Resistenza di remata, trazione, cuffia dei rotatori",
+   "blocks": [
+    {
+     "title": "Riscaldamento",
+     "items": [
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "worlds-greatest-stretch",
+       "duration": 20
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 5
+      },
+      {
+       "exercise": "march-in-place",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Resistenza di remata",
+     "items": [
+      {
+       "exercise": "prone-paddle",
+       "duration": 40
+      },
+      {
+       "exercise": "sphinx",
+       "duration": 15
+      },
+      {
+       "exercise": "superman",
+       "duration": 20
+      }
+     ],
+     "rounds": 3,
+     "restBetweenRounds": 60
+    },
+    {
+     "title": "Forza",
+     "items": [
+      {
+       "exercise": "push-up-to-cobra",
+       "reps": 6,
+       "sets": 3,
+       "rest": 45,
+       "restAfter": 30
+      },
+      {
+       "exercise": "inverted-row",
+       "reps": 8,
+       "sets": 3,
+       "rest": 60,
+       "restAfter": 30
+      },
+      {
+       "exercise": "external-rotation-iso",
+       "duration": 20,
+       "sets": 2,
+       "rest": 15,
+       "restAfter": 20
+      },
+      {
+       "exercise": "prone-swimmer",
+       "reps": 8,
+       "sets": 2,
+       "rest": 30
+      }
+     ]
+    },
+    {
+     "title": "Mobilità",
+     "items": [
+      {
+       "exercise": "hip-90-90",
+       "duration": 30
+      },
+      {
+       "exercise": "open-book",
+       "reps": 5
+      },
+      {
+       "exercise": "child-pose",
+       "duration": 40
+      }
+     ]
+    }
+   ],
+   "intro": "Petto sollevato come sulla tavola, bracciate lunghe. Le spalle devono lavorare, non fare male."
+  },
+  {
+   "id": "popup-gambe",
+   "title": "Pop-up e gambe",
+   "focus": "Tecnica del pop-up, forza delle gambe, stabilità",
+   "blocks": [
+    {
+     "title": "Riscaldamento",
+     "items": [
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "worlds-greatest-stretch",
+       "duration": 20
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 5
+      },
+      {
+       "exercise": "march-in-place",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Tecnica del pop-up",
+     "items": [
+      {
+       "exercise": "pop-up-slow",
+       "reps": 5,
+       "sets": 2,
+       "rest": 30,
+       "restAfter": 30
+      }
+     ]
+    },
+    {
+     "title": "Forza gambe",
+     "items": [
+      {
+       "exercise": "squat",
+       "reps": 12,
+       "sets": 3,
+       "rest": 45,
+       "restAfter": 30
+      },
+      {
+       "exercise": "reverse-lunge",
+       "reps": 8,
+       "sets": 3,
+       "rest": 45,
+       "restAfter": 30
+      },
+      {
+       "exercise": "glute-bridge",
+       "reps": 12,
+       "sets": 2,
+       "rest": 30,
+       "restAfter": 30
+      }
+     ]
+    },
+    {
+     "title": "Stabilità",
+     "items": [
+      {
+       "exercise": "surf-stance-squat",
+       "reps": 8,
+       "sets": 2,
+       "rest": 20
+      },
+      {
+       "exercise": "single-leg-balance",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Defaticamento",
+     "items": [
+      {
+       "exercise": "low-lunge",
+       "duration": 30
+      },
+      {
+       "exercise": "garland",
+       "duration": 40
+      }
+     ]
+    }
+   ],
+   "intro": "Scegli il tuo piede avanti (regular o goofy) e usa sempre quello."
+  },
+  {
+   "id": "equilibrio",
+   "title": "Equilibrio e rotazione",
+   "focus": "Core in rotazione, equilibrio, mobilità di anche e torace",
+   "blocks": [
+    {
+     "title": "Attivazione",
+     "items": [
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Circuito",
+     "items": [
+      {
+       "exercise": "rotational-lunge",
+       "reps": 6
+      },
+      {
+       "exercise": "side-plank",
+       "duration": 20
+      },
+      {
+       "exercise": "bird-dog",
+       "reps": 10,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "dead-bug",
+       "reps": 8,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "tree",
+       "duration": 30
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 60
+    },
+    {
+     "title": "Mobilità",
+     "items": [
+      {
+       "exercise": "hip-90-90",
+       "duration": 40
+      },
+      {
+       "exercise": "open-book",
+       "reps": 6
+      },
+      {
+       "exercise": "cossack-squat",
+       "reps": 6,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "deep-squat-hold",
+       "duration": 40
+      },
+      {
+       "exercise": "supine-twist",
+       "duration": 30
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "remata-intervalli",
+   "title": "Remata a intervalli",
+   "focus": "Sprint e resistenza di remata, forza di trazione",
+   "blocks": [
+    {
+     "title": "Riscaldamento",
+     "items": [
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "worlds-greatest-stretch",
+       "duration": 20
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 5
+      },
+      {
+       "exercise": "march-in-place",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Sprint di remata",
+     "items": [
+      {
+       "exercise": "prone-paddle",
+       "duration": 20,
+       "note": "A tutta, come per prendere un'onda",
+       "fixed": true
+      }
+     ],
+     "rounds": 6,
+     "restBetweenRounds": 40
+    },
+    {
+     "title": "Remata continua",
+     "items": [
+      {
+       "exercise": "prone-paddle",
+       "duration": 60,
+       "note": "Ritmo costante, respira"
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 60
+    },
+    {
+     "title": "Forza",
+     "items": [
+      {
+       "exercise": "push-up",
+       "reps": 8,
+       "sets": 3,
+       "rest": 60,
+       "restAfter": 30
+      },
+      {
+       "exercise": "inverted-row",
+       "reps": 10,
+       "sets": 3,
+       "rest": 60,
+       "restAfter": 30
+      },
+      {
+       "exercise": "pike-push-up",
+       "reps": 6,
+       "sets": 2,
+       "rest": 45,
+       "restAfter": 30
+      },
+      {
+       "exercise": "external-rotation-iso",
+       "duration": 25,
+       "sets": 2,
+       "rest": 15,
+       "restAfter": 20
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 8
+      }
+     ]
+    },
+    {
+     "title": "Mobilità",
+     "items": [
+      {
+       "exercise": "hip-90-90",
+       "duration": 30
+      },
+      {
+       "exercise": "open-book",
+       "reps": 5
+      },
+      {
+       "exercise": "child-pose",
+       "duration": 40
+      }
+     ]
+    }
+   ],
+   "intro": "Gli sprint sono brevi e intensi: recupera completamente tra uno e l'altro."
+  },
+  {
+   "id": "popup-esplosivo",
+   "title": "Pop-up esplosivo",
+   "focus": "Potenza, pliometria leggera, atterraggi stabili",
+   "blocks": [
+    {
+     "title": "Riscaldamento",
+     "items": [
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "worlds-greatest-stretch",
+       "duration": 20
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 5
+      },
+      {
+       "exercise": "march-in-place",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Pop-up",
+     "items": [
+      {
+       "exercise": "pop-up",
+       "reps": 6,
+       "sets": 3,
+       "rest": 45,
+       "restAfter": 30
+      },
+      {
+       "exercise": "sprawl",
+       "duration": 20,
+       "sets": 3,
+       "rest": 40,
+       "restAfter": 45
+      }
+     ]
+    },
+    {
+     "title": "Potenza gambe",
+     "items": [
+      {
+       "exercise": "squat-jump",
+       "reps": 6,
+       "sets": 3,
+       "rest": 60,
+       "restAfter": 30
+      },
+      {
+       "exercise": "skater-hop",
+       "reps": 8,
+       "sets": 3,
+       "rest": 45,
+       "restAfter": 30,
+       "note": "Alternando i lati"
+      },
+      {
+       "exercise": "split-squat",
+       "reps": 8,
+       "sets": 2,
+       "rest": 45,
+       "restAfter": 30
+      }
+     ]
+    },
+    {
+     "title": "Equilibrio",
+     "items": [
+      {
+       "exercise": "single-leg-balance",
+       "duration": 30,
+       "note": "Prova qualche secondo a occhi chiusi"
+      }
+     ]
+    },
+    {
+     "title": "Defaticamento",
+     "items": [
+      {
+       "exercise": "low-lunge",
+       "duration": 30
+      },
+      {
+       "exercise": "deep-squat-hold",
+       "duration": 40
+      }
+     ]
+    }
+   ],
+   "intro": "Qualità prima di tutto: ogni pop-up deve atterrare stabile e silenzioso."
+  },
+  {
+   "id": "core-rotazione",
+   "title": "Core in rotazione",
+   "focus": "Anti-rotazione, controllo, dorsali",
+   "blocks": [
+    {
+     "title": "Attivazione",
+     "items": [
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      },
+      {
+       "exercise": "prone-ytw",
+       "reps": 5
+      },
+      {
+       "exercise": "worlds-greatest-stretch",
+       "duration": 20
+      }
+     ]
+    },
+    {
+     "title": "Core",
+     "items": [
+      {
+       "exercise": "hollow-hold",
+       "duration": 25,
+       "sets": 3,
+       "rest": 30,
+       "restAfter": 30
+      },
+      {
+       "exercise": "shoulder-taps",
+       "reps": 16,
+       "sets": 3,
+       "rest": 30,
+       "restAfter": 30
+      },
+      {
+       "exercise": "bear-crawl",
+       "duration": 25,
+       "sets": 3,
+       "rest": 40,
+       "restAfter": 30
+      },
+      {
+       "exercise": "rotational-lunge",
+       "reps": 8,
+       "sets": 2,
+       "rest": 30,
+       "restAfter": 30
+      },
+      {
+       "exercise": "saw",
+       "reps": 5
+      },
+      {
+       "exercise": "towel-pullover",
+       "reps": 8,
+       "sets": 3,
+       "rest": 30
+      }
+     ]
+    },
+    {
+     "title": "Mobilità",
+     "items": [
+      {
+       "exercise": "hip-90-90",
+       "duration": 40
+      },
+      {
+       "exercise": "thread-the-needle",
+       "duration": 30
+      },
+      {
+       "exercise": "supported-pigeon",
+       "duration": 45
+      },
+      {
+       "exercise": "savasana",
+       "duration": 60
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "week": 1,
+   "sessions": [
+    "remata",
+    "popup-gambe",
+    "equilibrio"
+   ],
+   "note": "Fase 1: impara i movimenti. Pop-up lento e pulito."
+  },
+  {
+   "week": 2,
+   "sessions": [
+    "remata",
+    "popup-gambe",
+    "equilibrio"
+   ],
+   "adjust": {
+    "reps": 1,
+    "duration": 5
+   }
+  },
+  {
+   "week": 3,
+   "sessions": [
+    "remata",
+    "popup-gambe",
+    "equilibrio"
+   ],
+   "adjust": {
+    "reps": 2,
+    "duration": 10,
+    "rounds": 1
+   }
+  },
+  {
+   "week": 4,
+   "sessions": [
+    "remata-intervalli",
+    "popup-esplosivo",
+    "core-rotazione"
+   ],
+   "note": "Fase 2: più intensità. Se una sessione ti lascia dolori articolari, torna alla fase 1."
+  },
+  {
+   "week": 5,
+   "sessions": [
+    "remata-intervalli",
+    "popup-esplosivo",
+    "core-rotazione"
+   ],
+   "adjust": {
+    "reps": 1,
+    "duration": 5
+   }
+  },
+  {
+   "week": 6,
+   "sessions": [
+    "remata-intervalli",
+    "popup-esplosivo",
+    "core-rotazione"
+   ],
+   "adjust": {
+    "reps": 2,
+    "duration": 10,
+    "rounds": 1
+   }
+  }
+ ]
+}

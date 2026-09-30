@@ -1,0 +1,7 @@
+node_modules/
+moveo/server/data/
+moveo/web/dist/
+__pycache__/
+.claude/settings.local.json
+*.log
+.DS_Store

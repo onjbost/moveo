@@ -1,0 +1,224 @@
+{
+ "id": "pause-scrivania",
+ "title": "Pause da scrivania",
+ "category": "desk",
+ "kind": "collection",
+ "level": "tutti",
+ "summary": "Routine da 3-5 minuti per collo, spalle, schiena e gambe, da fare in piedi o sulla sedia, senza cambiarti.",
+ "description": "Sono le routine che Moveo ti propone durante l'orario di lavoro. Ognuna scioglie una zona che soffre la posizione seduta; ruotano da sole per coprire tutto il corpo nel corso della giornata. Si fanno in abiti da ufficio e senza tappetino.",
+ "goals": [
+  "Ridurre la rigidità di collo e spalle",
+  "Interrompere la sedentarietà ogni 1-2 ore",
+  "Riattivare circolazione e concentrazione"
+ ],
+ "equipment": [
+  "sedia",
+  "muro o stipite"
+ ],
+ "sessions": [
+  {
+   "id": "collo",
+   "title": "Collo libero",
+   "focus": "Collo e trapezi",
+   "blocks": [
+    {
+     "title": "Collo",
+     "items": [
+      {
+       "exercise": "diaphragmatic-breathing",
+       "duration": 30
+      },
+      {
+       "exercise": "chin-tuck",
+       "reps": 10
+      },
+      {
+       "exercise": "neck-side-stretch",
+       "duration": 25
+      },
+      {
+       "exercise": "levator-stretch",
+       "duration": 25
+      },
+      {
+       "exercise": "neck-rotation",
+       "duration": 15
+      },
+      {
+       "exercise": "shoulder-rolls",
+       "reps": 10
+      }
+     ]
+    }
+   ],
+   "intro": "Siediti sul bordo della sedia, piedi a terra, schiena lunga."
+  },
+  {
+   "id": "schiena",
+   "title": "Schiena da ufficio",
+   "focus": "Colonna e dorsale",
+   "blocks": [
+    {
+     "title": "Colonna",
+     "items": [
+      {
+       "exercise": "seated-cat-cow",
+       "reps": 8
+      },
+      {
+       "exercise": "seated-twist",
+       "duration": 25
+      },
+      {
+       "exercise": "standing-back-extension",
+       "reps": 8
+      },
+      {
+       "exercise": "standing-side-bend",
+       "duration": 20
+      },
+      {
+       "exercise": "chin-tuck",
+       "reps": 8
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anche",
+   "title": "Anche e gambe",
+   "focus": "Flessori dell'anca, glutei, femorali",
+   "blocks": [
+    {
+     "title": "Gambe",
+     "items": [
+      {
+       "exercise": "sit-to-stand",
+       "reps": 10
+      },
+      {
+       "exercise": "standing-hip-flexor",
+       "duration": 30
+      },
+      {
+       "exercise": "standing-hamstring",
+       "duration": 25
+      },
+      {
+       "exercise": "seated-figure-four",
+       "duration": 25
+      },
+      {
+       "exercise": "calf-raise",
+       "reps": 15
+      }
+     ]
+    }
+   ],
+   "intro": "Otto ore seduti accorciano i flessori dell'anca: qui li allunghiamo."
+  },
+  {
+   "id": "spalle",
+   "title": "Spalle aperte",
+   "focus": "Petto, spalle e scapole",
+   "blocks": [
+    {
+     "title": "Spalle",
+     "items": [
+      {
+       "exercise": "shoulder-rolls",
+       "reps": 10
+      },
+      {
+       "exercise": "scap-squeeze",
+       "reps": 12
+      },
+      {
+       "exercise": "doorway-pec-stretch",
+       "duration": 25
+      },
+      {
+       "exercise": "wall-angels",
+       "reps": 8
+      },
+      {
+       "exercise": "cross-body-stretch",
+       "duration": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "energia",
+   "title": "Ricarica",
+   "focus": "Circolazione ed energia",
+   "blocks": [
+    {
+     "title": "Energia",
+     "items": [
+      {
+       "exercise": "march-in-place",
+       "duration": 40
+      },
+      {
+       "exercise": "arm-circles",
+       "duration": 30
+      },
+      {
+       "exercise": "sit-to-stand",
+       "reps": 10
+      },
+      {
+       "exercise": "incline-push-up",
+       "reps": 8,
+       "note": "Mani sul bordo della scrivania"
+      },
+      {
+       "exercise": "calf-raise",
+       "reps": 15
+      },
+      {
+       "exercise": "standing-side-bend",
+       "duration": 15
+      }
+     ]
+    }
+   ],
+   "intro": "Per il calo di metà pomeriggio: due minuti per rimettere in moto il corpo."
+  },
+  {
+   "id": "reset",
+   "title": "Reset rapido",
+   "focus": "Respiro, polsi, collo, equilibrio",
+   "blocks": [
+    {
+     "title": "Reset",
+     "items": [
+      {
+       "exercise": "diaphragmatic-breathing",
+       "duration": 45
+      },
+      {
+       "exercise": "wrist-stretch",
+       "duration": 15
+      },
+      {
+       "exercise": "shoulder-rolls",
+       "reps": 8
+      },
+      {
+       "exercise": "neck-side-stretch",
+       "duration": 20
+      },
+      {
+       "exercise": "single-leg-balance",
+       "duration": 20
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

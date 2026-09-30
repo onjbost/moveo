@@ -1,0 +1,305 @@
+{
+ "id": "yoga-fondamenta",
+ "title": "Yoga: fondamenta",
+ "category": "yoga",
+ "level": "principiante",
+ "summary": "Quattro settimane per imparare le posizioni base, ritrovare mobilità e respirare meglio.",
+ "description": "Tre pratiche che si alternano: una in piedi per forza ed equilibrio, una a terra per colonna e anche, una più dinamica basata sul saluto al sole. Settimana dopo settimana le tenute si allungano di qualche secondo. Le posizioni sono accessibili: dove serve, usa cuscini o una sedia come supporto.",
+ "goals": [
+  "Mobilità di anche, spalle e colonna",
+  "Equilibrio e consapevolezza del corpo",
+  "Respiro più lento e profondo"
+ ],
+ "equipment": [
+  "tappetino",
+  "cuscino"
+ ],
+ "suggestedDays": [
+  2,
+  4,
+  6
+ ],
+ "sessions": [
+  {
+   "id": "radici",
+   "title": "Radici in piedi",
+   "focus": "Gambe, equilibrio, apertura",
+   "blocks": [
+    {
+     "title": "Centratura",
+     "items": [
+      {
+       "exercise": "mountain",
+       "duration": 30
+      },
+      {
+       "exercise": "diaphragmatic-breathing",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Saluti",
+     "items": [
+      {
+       "exercise": "sun-salutation",
+       "duration": 180
+      }
+     ]
+    },
+    {
+     "title": "Posizioni in piedi",
+     "items": [
+      {
+       "exercise": "warrior-1",
+       "duration": 30
+      },
+      {
+       "exercise": "warrior-2",
+       "duration": 30
+      },
+      {
+       "exercise": "triangle",
+       "duration": 30
+      },
+      {
+       "exercise": "chair-pose",
+       "duration": 20
+      },
+      {
+       "exercise": "downward-dog",
+       "duration": 30
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 20
+    },
+    {
+     "title": "Equilibrio",
+     "items": [
+      {
+       "exercise": "tree",
+       "duration": 30
+      },
+      {
+       "exercise": "garland",
+       "duration": 45
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 6
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "child-pose",
+       "duration": 45
+      },
+      {
+       "exercise": "savasana",
+       "duration": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "colonna-anche",
+   "title": "Colonna e anche",
+   "focus": "Mobilità a terra",
+   "blocks": [
+    {
+     "title": "Respiro",
+     "items": [
+      {
+       "exercise": "diaphragmatic-breathing",
+       "duration": 45
+      },
+      {
+       "exercise": "cat-cow",
+       "reps": 8
+      }
+     ]
+    },
+    {
+     "title": "Anche",
+     "items": [
+      {
+       "exercise": "downward-dog",
+       "duration": 30
+      },
+      {
+       "exercise": "low-lunge",
+       "duration": 40
+      },
+      {
+       "exercise": "hip-90-90",
+       "duration": 40
+      },
+      {
+       "exercise": "supported-pigeon",
+       "duration": 60
+      },
+      {
+       "exercise": "garland",
+       "duration": 40
+      }
+     ]
+    },
+    {
+     "title": "Colonna",
+     "items": [
+      {
+       "exercise": "sphinx",
+       "duration": 40
+      },
+      {
+       "exercise": "cobra",
+       "reps": 5
+      },
+      {
+       "exercise": "bridge-pose",
+       "duration": 30,
+       "sets": 2,
+       "rest": 15
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "supine-twist",
+       "duration": 40
+      },
+      {
+       "exercise": "happy-baby",
+       "duration": 40
+      },
+      {
+       "exercise": "savasana",
+       "duration": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flusso-sole",
+   "title": "Flusso del sole",
+   "focus": "Forza e continuità",
+   "blocks": [
+    {
+     "title": "Saluti",
+     "items": [
+      {
+       "exercise": "sun-salutation",
+       "duration": 240
+      }
+     ]
+    },
+    {
+     "title": "Guerrieri",
+     "items": [
+      {
+       "exercise": "warrior-1",
+       "duration": 30
+      },
+      {
+       "exercise": "warrior-2",
+       "duration": 30
+      },
+      {
+       "exercise": "triangle",
+       "duration": 30
+      },
+      {
+       "exercise": "plank",
+       "duration": 20
+      },
+      {
+       "exercise": "downward-dog",
+       "duration": 30
+      }
+     ],
+     "rounds": 2,
+     "restBetweenRounds": 20
+    },
+    {
+     "title": "Equilibrio e allungamento",
+     "items": [
+      {
+       "exercise": "tree",
+       "duration": 30
+      },
+      {
+       "exercise": "seated-forward-fold",
+       "duration": 60
+      },
+      {
+       "exercise": "supine-twist",
+       "duration": 30
+      }
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      {
+       "exercise": "savasana",
+       "duration": 120
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "week": 1,
+   "sessions": [
+    "radici",
+    "colonna-anche",
+    "flusso-sole"
+   ],
+   "note": "Impara le forme: meglio corte e comode che lunghe e forzate."
+  },
+  {
+   "week": 2,
+   "sessions": [
+    "radici",
+    "colonna-anche",
+    "flusso-sole"
+   ],
+   "adjust": {
+    "duration": 5
+   }
+  },
+  {
+   "week": 3,
+   "sessions": [
+    "colonna-anche",
+    "flusso-sole",
+    "radici"
+   ],
+   "adjust": {
+    "duration": 10
+   }
+  },
+  {
+   "week": 4,
+   "sessions": [
+    "flusso-sole",
+    "colonna-anche",
+    "radici"
+   ],
+   "adjust": {
+    "duration": 15
+   },
+   "note": "Tenute più lunghe: cerca calma nelle posizioni difficili."
+  }
+ ]
+}
