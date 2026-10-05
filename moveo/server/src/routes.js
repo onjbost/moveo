@@ -271,16 +271,18 @@ export async function registerRoutes(app) {
   });
 
   // ------------------------------------------------------------- suite (Calendary)
+  /** A planned session as Calendary shows it (path opens the player directly). */
+  const pick = (s) => s && ({
+    title: s.title, programTitle: s.programTitle, category: s.category, emoji: categories.emoji(s.category), date: s.date, time: s.time,
+    durationMin: s.durationMin, week: s.week, weeks: s.weeks,
+    path: `/play/${s.programId}/${s.sessionId}?w=${s.week}&ps=${s.id}`,
+  });
+
   /** Compact summary for Calendary's dashboard and kiosk card (Bearer: shared suite token). */
   app.get('/suite/today', async () => {
     const now = new Date();
     breaks.ensureToday(now);
     const today = ymd(now);
-    const pick = (s) => s && ({
-      title: s.title, programTitle: s.programTitle, category: s.category, emoji: categories.emoji(s.category), date: s.date, time: s.time,
-      durationMin: s.durationMin, week: s.week, weeks: s.weeks,
-      path: `/play/${s.programId}/${s.sessionId}?w=${s.week}&ps=${s.id}`,
-    });
     const todays = plans.sessionsBetween(today, today);
     const upcoming = plans.upcomingSessions(today, 3);
     const list = breaks.breaksOn(today);
@@ -304,6 +306,33 @@ export async function registerRoutes(app) {
       streak: st.streak,
       minutesWeek: st.week.minutes,
     };
+  });
+
+  /**
+   * Calendary's tablet "Moveo" tab: last workouts (desk breaks excluded), next planned sessions and the programs,
+   * the planned ones first. Same Bearer token as /suite/today.
+   */
+  app.get('/suite/overview', async () => {
+    const today = ymd(new Date());
+    const planned = new Set(plans.listPlans().filter((p) => p.done < p.total).map((p) => p.programId));
+    const recent = logs.listLogs(60).filter((l) => l.programId !== breaks.BREAK_PROGRAM).slice(0, 15).map((l) => ({
+      title: l.title,
+      programTitle: content.findProgram(l.programId)?.title || '',
+      category: l.category,
+      emoji: categories.emoji(l.category),
+      finishedAt: l.finishedAt,
+      durationSec: l.durationSec,
+      completion: l.completion,
+    }));
+    const upcoming = plans.upcomingSessions(today, 12).filter((s) => !s.done).map(pick);
+    const programs = content.listPrograms()
+      .filter((p) => p.id !== breaks.BREAK_PROGRAM)
+      .map((p) => ({
+        id: p.id, title: p.title, category: p.category, emoji: categories.emoji(p.category), level: p.level, minutes: p.minutes,
+        weeks: p.weeks, summary: p.summary, path: `/programmi/${p.id}`, planned: planned.has(p.id),
+      }))
+      .sort((a, b) => Number(b.planned) - Number(a.planned));
+    return { recent, upcoming, programs };
   });
 
   /** Link to Calendary that signs you in automatically (single-use ticket, valid 2 minutes). */

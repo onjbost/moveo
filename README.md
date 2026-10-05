@@ -42,6 +42,7 @@ Moveo usa l'API di Calendary (dalla **0.3.0**) con un token dedicato:
 | Calendary → Moveo | A cosa serve |
 |---|---|
 | `GET /api/suite/today` (stesso token) | card *Allenamento* nella dashboard e nel kiosk di Calendary |
+| `GET /api/suite/overview` (stesso token) | scheda *Moveo* del tablet di Calendary: ultimi allenamenti, prossimi, programmi |
 | `/sso?t=…` | accesso unico: ticket firmati, monouso, validi 2 minuti, in entrambe le direzioni |
 | `moveo://open?url=…` / `calendary://open?url=…` | le due app Android si aprono a vicenda |
 

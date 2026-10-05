@@ -103,6 +103,7 @@ I file restano in `/data/attachments` sul tuo server (non nel repository né nel
 
 - **Accesso unico**: il pulsante *📅 Calendary* (nel menu e nella vista tablet) apre Calendary già autenticato, e i link di Calendary aprono Moveo già autenticato. Funziona con ticket firmati con il segreto condiviso, monouso e validi 2 minuti.
 - **Card in Calendary**: Calendary legge `GET /api/suite/today` (protetto dallo stesso token) e mostra nella dashboard e nel kiosk la sessione di oggi e le pause, con **▶ Avvia** e **Pausa adesso**.
+- **Scheda Moveo del tablet di Calendary**: Calendary legge `GET /api/suite/overview` (stesso token): ultimi allenamenti (pause escluse), prossime sessioni pianificate e programmi, con quelli in corso per primi.
 - **Vista tablet** `/tablet`: orologio, allenamento del giorno con un grande ▶, pausa immediata, pause della giornata e prossime sessioni.
 
 ## App Android (tablet e telefono)
