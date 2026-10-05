@@ -73,7 +73,7 @@ export function startSession(req, reply) {
 }
 
 // Endpoints Calendary calls server-to-server with the shared suite token.
-const SUITE_PATHS = new Set(['/api/suite/today']);
+const SUITE_PATHS = new Set(['/api/suite/today', '/api/suite/overview']);
 
 export function registerAuth(app) {
   if (config.noAuth) app.log.warn('MOVEO_NO_AUTH=1: autenticazione disattivata (solo per sviluppo!)');
