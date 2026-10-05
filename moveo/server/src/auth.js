@@ -7,6 +7,12 @@ const COOKIE = 'moveo_session';
 const SESSION_DAYS = 365; // the kiosk tablet should stay logged in
 const PUBLIC_PATHS = new Set(['/api/login', '/api/logout', '/api/session', '/api/health']);
 
+/**
+ * Only the local reverse proxies (Cloudflared / HA ingress on the Docker network) are trusted, so req.ip is the
+ * address they appended and not one the client wrote in X-Forwarded-For (the login limit counts per IP).
+ */
+export const TRUST_PROXY = 'loopback, linklocal, uniquelocal';
+
 const authConfigured = () => config.noAuth || config.password.length > 0;
 
 let secretKey = null;
@@ -80,9 +86,12 @@ export function registerAuth(app) {
   else if (!config.password) app.log.warn('Nessuna password configurata: le API resteranno bloccate finché non la imposti.');
 
   app.addHook('onRequest', async (req, reply) => {
-    const path = req.url.split('?')[0];
-    if (!path.startsWith('/api/') || PUBLIC_PATHS.has(path)) return;
-    if (SUITE_PATHS.has(path) && bearerOk(req)) return;
+    // Decide on the route the router actually matched: the raw URL may be percent-encoded (/%61pi/programs is
+    // routed to /api/programs). Unmatched requests are API 404s or the web app's files.
+    const route = req.routeOptions?.url;
+    const apiLike = route ? route.startsWith('/api/') : /^\/api(\/|$)/i.test(decodePath(req.url.split('?')[0]));
+    if (!apiLike || PUBLIC_PATHS.has(route)) return;
+    if (SUITE_PATHS.has(route) && bearerOk(req)) return;
     if (!authConfigured()) return reply.code(503).send({ error: "Imposta una password nelle opzioni dell'add-on" });
     if (!isAuthenticated(req)) return reply.code(401).send({ error: 'Accesso richiesto' });
   });
@@ -110,4 +119,12 @@ export function registerAuth(app) {
     reply.clearCookie(COOKIE, { path: '/' });
     return { ok: true };
   });
+}
+
+function decodePath(p) {
+  try {
+    return decodeURIComponent(p);
+  } catch {
+    return p;
+  }
 }

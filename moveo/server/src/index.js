@@ -5,7 +5,7 @@ import Fastify from 'fastify';
 import fastifyCookie from '@fastify/cookie';
 import fastifyStatic from '@fastify/static';
 import { config } from './config.js';
-import { registerAuth, startSession } from './auth.js';
+import { registerAuth, startSession, TRUST_PROXY } from './auth.js';
 import { verifyTicket } from './suite.js';
 import { registerRoutes } from './routes.js';
 import { loadBuiltinContent } from './content.js';
@@ -19,7 +19,7 @@ const webDist = process.env.WEB_DIST || path.resolve(here, '../../web/dist');
 
 const app = Fastify({
   logger: { level: process.env.LOG_LEVEL || 'info' },
-  trustProxy: true,
+  trustProxy: TRUST_PROXY, // Cloudflare tunnel / HA ingress in front (local addresses only)
   bodyLimit: 5_000_000, // imported programs can be large
 });
 
