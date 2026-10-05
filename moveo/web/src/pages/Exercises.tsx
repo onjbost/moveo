@@ -31,7 +31,9 @@ export function ExercisesPage() {
         {list.map((e) => (
           <div key={e.id} className="list-ex" onClick={() => setOpen(e)} tabIndex={0} onKeyDown={(k) => k.key === 'Enter' && setOpen(e)}>
             <div className="grow">
-              <div><b>{e.name}</b>{e.perSide ? <span className="faint"> ↔</span> : null}</div>
+              <div><b>{e.name}</b>{e.perSide ? <span className="faint"> ↔</span> : null}
+                {e.animation ? <span className="chip" style={{ marginLeft: 8 }}>🎞 animazione</span> : null}
+                {e.video ? <span className="chip" style={{ marginLeft: 6 }}>▶ video</span> : null}</div>
               <div className="faint small ellipsis">{[e.position, ...e.targets].filter(Boolean).join(' · ')}</div>
             </div>
             <div className="row" style={{ gap: 4 }}>{e.categories.filter((c) => c !== 'mobility').slice(0, 3).map((c) => <span key={c} className={`chip cat cat-${c}`}>{CATEGORY_EMOJI[c as Category]}</span>)}</div>

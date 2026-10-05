@@ -15,6 +15,7 @@ App di allenamento self-hosted per **Home Assistant**, in italiano: programmi gu
 Moveo/
 ├── repository.yaml        ← repository di add-on per Home Assistant
 ├── deploy.ps1             ← copia l'add-on nella cartella addons di Home Assistant (Samba)
+├── tablet/                ← app Android (Capacitor) per tablet e telefono
 └── moveo/                 ← l'add-on
     ├── config.yaml
     ├── Dockerfile
@@ -37,6 +38,12 @@ Moveo usa l'API di Calendary (dalla **0.3.0**) con un token dedicato:
 | `DELETE /api/plans/moveo:<id>` | elimina il piano |
 | `GET /api/events` | controlla se sei in riunione prima di proporre una pausa |
 | `POST /api/notify` | invia le notifiche delle pause a tutti i dispositivi |
+
+| Calendary → Moveo | A cosa serve |
+|---|---|
+| `GET /api/suite/today` (stesso token) | card *Allenamento* nella dashboard e nel kiosk di Calendary |
+| `/sso?t=…` | accesso unico: ticket firmati, monouso, validi 2 minuti, in entrambe le direzioni |
+| `moveo://open?url=…` / `calendary://open?url=…` | le due app Android si aprono a vicenda |
 
 In Calendary l'evento mostra il pulsante **▶ Avvia allenamento**, che apre `https://moveo…/play/<programma>/<sessione>`.
 Se Calendary non è raggiungibile Moveo continua a funzionare e sincronizza i piani appena torna disponibile.

@@ -69,6 +69,17 @@ export function TodayPage() {
         </div>
       </div>
 
+      {data.proposal && (
+        <div className="card hero row between" style={{ borderColor: 'var(--teal)' }}>
+          <div className="stack tight">
+            <span className="chip" style={{ alignSelf: 'flex-start' }}>✨ Nuovo programma pronto</span>
+            <h2>{data.proposal.title}</h2>
+            {data.proposal.summary && <span className="muted small">{data.proposal.summary}</span>}
+          </div>
+          <Link to="/prossimo" className="btn primary">Guarda la proposta →</Link>
+        </div>
+      )}
+
       {openBreak && (
         <div className="card hero cat-desk row between" style={{ borderColor: 'var(--coral)' }}>
           <div className="stack tight">

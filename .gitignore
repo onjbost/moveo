@@ -5,3 +5,9 @@ __pycache__/
 .claude/settings.local.json
 *.log
 .DS_Store
+tablet/android/app/build/
+tablet/android/build/
+tablet/android/.gradle/
+tablet/android/.kotlin/
+tablet/android/local.properties
+*.apk

@@ -1,0 +1,23 @@
+{
+  "name": "moveo-tablet",
+  "version": "0.2.0",
+  "private": true,
+  "description": "App Android (Capacitor) di Moveo per tablet e telefono, collegata all'app Calendary",
+  "scripts": {
+    "sync": "cap sync android",
+    "open": "cap open android",
+    "icons": "capacitor-assets generate --android --iconBackgroundColor #071a1d --splashBackgroundColor #071a1d",
+    "apk": "cd android && gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor-community/keep-awake": "^8.0.1",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/status-bar": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.2"
+  }
+}

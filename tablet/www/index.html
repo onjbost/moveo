@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moveo</title>
+    <style>
+      html, body { height: 100%; margin: 0; background: #071a1d; color: #eaf6f4; font-family: system-ui, sans-serif; }
+      body { display: grid; place-items: center; text-align: center; }
+      h1 { font-family: Georgia, serif; font-weight: 600; }
+      p { color: #9bbcb8; }
+      button { margin-top: 16px; padding: 12px 24px; border-radius: 999px; border: 0; background: #2dd4bf; color: #042f2e; font-size: 1rem; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <!-- Shown only if the server can't be reached: the app normally loads server.url directly. -->
+    <div>
+      <h1>Moveo</h1>
+      <p>Impossibile raggiungere moveo.gattucciocloud.it.<br />Controlla la connessione Wi-Fi.</p>
+      <button onclick="location.href='https://moveo.gattucciocloud.it/tablet'">Riprova</button>
+    </div>
+    <script>setTimeout(() => (location.href = 'https://moveo.gattucciocloud.it/tablet'), 30000);</script>
+  </body>
+</html>

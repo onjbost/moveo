@@ -3,7 +3,7 @@ import { config } from './config.js';
 import { db, getSetting, setSetting } from './db.js';
 import { exerciseMap, findProgram } from './content.js';
 import { calendary, calendaryEnabled, haEnabled, notifyAll } from './integrations.js';
-import { CATEGORY_EMOJI, playUrl, upcomingSessions } from './plans.js';
+import { categoryEmoji, playUrl, upcomingSessions } from './plans.js';
 import { httpError, nowIso, ymd } from './util.js';
 
 export const BREAK_PROGRAM = 'pause-scrivania';
@@ -189,7 +189,7 @@ export async function sendBreak(row) {
   const first = session ? [...new Set(session.blocks.flatMap((bl) => bl.items.map((i) => i.exercise)))].slice(0, 3) : [];
   const ex = exerciseMap();
   const results = await notifyAll({
-    title: `${CATEGORY_EMOJI.desk} Pausa movimento: ${b.title}`,
+    title: `🪑 Pausa movimento: ${b.title}`,
     body: `${first.map((id) => ex.get(id)?.name || id).join(' · ')}\nBastano pochi minuti: alzati dalla sedia.`,
     url: b.url,
     tag: `moveo-break-${b.id}`,
@@ -241,7 +241,7 @@ async function checkSessionReminders(now) {
     if (getSetting(key)) continue;
     setSetting(key, nowIso());
     await notifyAll({
-      title: `${CATEGORY_EMOJI[ps.category] || '🏃'} ${lead ? `Tra ${lead} min` : 'Adesso'}: ${ps.title}`,
+      title: `${categoryEmoji(ps.category) || '🏃'} ${lead ? `Tra ${lead} min` : 'Adesso'}: ${ps.title}`,
       body: `${ps.programTitle} · settimana ${ps.week} · circa ${ps.durationMin} min`,
       url: ps.url,
       tag: `moveo-session-${ps.id}`,

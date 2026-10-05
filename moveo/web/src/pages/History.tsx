@@ -1,7 +1,7 @@
-import { api, CATEGORY_LABEL, fmtDuration, fmtShort, fmtTime, type Category } from '../api';
+import { categoryIds } from '../categories';
+import { api, CATEGORY_LABEL, fmtDuration, fmtShort, fmtTime } from '../api';
 import { CatChip, ErrorBox, Loading, useData, useToast } from '../ui';
 
-const CAT_ORDER: Category[] = ['desk', 'recovery', 'yoga', 'pilates', 'calisthenics', 'surf'];
 
 export function HistoryPage() {
   const toast = useToast();
@@ -11,6 +11,9 @@ export function HistoryPage() {
   if (!stats.data || !logs.data) return <Loading />;
   const s = stats.data;
   const max = Math.max(30, ...s.weeks.map((w) => w.minutes));
+  // your categories too, plus any that was deleted but still appears in old sessions
+  const known = categoryIds();
+  const CAT_ORDER = [...known, ...new Set(s.weeks.flatMap((w) => Object.keys(w.byCategory)).filter((c) => !known.includes(c)))];
   const used = CAT_ORDER.filter((c) => s.weeks.some((w) => w.byCategory[c]));
 
   const remove = async (id: string) => {
@@ -37,14 +40,14 @@ export function HistoryPage() {
               <div className="val num">{w.minutes || ''}</div>
               <div className="col" title={`${w.minutes} min`}>
                 {CAT_ORDER.filter((c) => w.byCategory[c]).reverse().map((c) => (
-                  <div key={c} className="seg" style={{ height: `${(w.byCategory[c] / max) * 100}%`, background: `var(--c-${c})` }} />
+                  <div key={c} className="seg" style={{ height: `${(w.byCategory[c] / max) * 100}%`, background: `var(--c-${c}, #8a94a6)` }} />
                 ))}
               </div>
               <div className="lbl">{fmtShort(w.week).split(' ').slice(1).join(' ')}</div>
             </div>
           ))}
         </div>
-        {used.length > 0 && <div className="row small">{used.map((c) => <span key={c} className="row" style={{ gap: 6 }}><i style={{ width: 10, height: 10, borderRadius: 3, background: `var(--c-${c})`, display: 'inline-block' }} />{CATEGORY_LABEL[c]}</span>)}</div>}
+        {used.length > 0 && <div className="row small">{used.map((c) => <span key={c} className="row" style={{ gap: 6 }}><i style={{ width: 10, height: 10, borderRadius: 3, background: `var(--c-${c}, #8a94a6)`, display: 'inline-block' }} />{CATEGORY_LABEL[c] || c}</span>)}</div>}
       </section>
       <section className="card stack">
         <h2>Allenamenti</h2>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { api } from './api';
+import { reloadCategories, useCategories } from './categories';
+import { api, DAREBEE_URL } from './api';
 import { Link, useLocation } from './router';
 import { ToastProvider } from './ui';
 import { Login } from './pages/Login';
@@ -11,20 +12,32 @@ import { PlansPage } from './pages/Plans';
 import { HistoryPage } from './pages/History';
 import { SettingsPage } from './pages/Settings';
 import { Player, QuickBreak } from './pages/Player';
+import { TabletPage } from './pages/Tablet';
+import { NextProgramPage } from './pages/NextProgram';
+import { YouTubePlanPage } from './pages/YouTubePlan';
+import { listenDeepLinks, openCalendary } from './native';
+import { rememberHome } from './home';
 
 const NAV = [
   { to: '/', label: 'Oggi', ico: '☀️' },
   { to: '/programmi', label: 'Programmi', ico: '📚' },
   { to: '/piano', label: 'Piano', ico: '🗓️' },
+  { to: '/prossimo', label: 'Prossimo programma', ico: '✨' },
   { to: '/storico', label: 'Storico', ico: '📈' },
   { to: '/esercizi', label: 'Esercizi', ico: '🧩' },
   { to: '/impostazioni', label: 'Impostazioni', ico: '⚙️' },
 ];
-const TABS = NAV.filter((n) => n.to !== '/esercizi');
+const TABS = NAV.filter((n) => n.to !== '/esercizi' && n.to !== '/prossimo');
 
 export function App() {
   const [auth, setAuth] = useState<'loading' | 'ok' | 'login'>('loading');
   const { path, query } = useLocation();
+
+  useCategories(); // re-render everything when your categories (labels, emoji, colors) are loaded or edited
+  useEffect(() => { if (auth === 'ok') reloadCategories(); }, [auth]);
+
+  // Android app: links from Calendary (moveo://open?url=…) land on the right page.
+  useEffect(() => listenDeepLinks(), []);
 
   useEffect(() => {
     api.session().then((s) => setAuth(s.authenticated ? 'ok' : 'login')).catch(() => setAuth('login'));
@@ -47,6 +60,7 @@ export function App() {
     );
   }
   if (path === '/pausa') return <ToastProvider><QuickBreak /></ToastProvider>;
+  if (path === '/tablet') return <ToastProvider><TabletPage /></ToastProvider>;
 
   const programMatch = path.match(/^\/programmi\/([\w-]+)\/?$/);
   let page;
@@ -54,6 +68,8 @@ export function App() {
   else if (programMatch) page = <ProgramPage id={programMatch[1]} />;
   else if (path.startsWith('/programmi')) page = <ProgramsPage />;
   else if (path.startsWith('/piano')) page = <PlansPage />;
+  else if (path.startsWith('/prossimo')) page = <NextProgramPage />;
+  else if (path.startsWith('/youtube')) page = <YouTubePlanPage />;
   else if (path.startsWith('/storico')) page = <HistoryPage />;
   else if (path.startsWith('/esercizi')) page = <ExercisesPage />;
   else if (path.startsWith('/impostazioni')) page = <SettingsPage onLogout={() => setAuth('login')} />;
@@ -72,7 +88,11 @@ export function App() {
             </Link>
           ))}
           <div className="spacer" />
-          <Link to="/pausa" className="btn coral">🪑 Pausa adesso</Link>
+          <button className="nav-link" style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit', textAlign: 'left' }}
+            onClick={() => openCalendary('/').catch(() => {})}><span className="ico">📅</span>Calendary ↗</button>
+          <a className="nav-link" href={DAREBEE_URL} target="_blank" rel="noopener"><span className="ico">🌐</span>DAREBEE ↗</a>
+          <Link to="/tablet" className="nav-link" onClick={() => rememberHome('/tablet')}><span className="ico">📱</span>Vista tablet</Link>
+          <Link to="/pausa" className="btn coral" style={{ marginTop: 8 }}>🪑 Pausa adesso</Link>
         </aside>
         <main className="main">{page}</main>
         <nav className="tabbar">

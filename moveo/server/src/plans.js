@@ -1,11 +1,13 @@
 import crypto from 'node:crypto';
+import * as categories from './categories.js';
 import { config } from './config.js';
 import { db, transaction } from './db.js';
-import { estimateSeconds, exerciseMap, expandSession, findProgram, getProgram, getSession } from './content.js';
+import { exerciseMap, findProgram, getProgram, getSession, sessionMinutes } from './content.js';
 import { calendary, calendaryEnabled, ensureCalendar } from './integrations.js';
 import { addDays, httpError, isYmd, nowIso, parseYmd, ymd } from './util.js';
 
-export const CATEGORY_EMOJI = { desk: '🪑', recovery: '🌿', yoga: '🧘', pilates: '⭕', calisthenics: '💪', surf: '🏄' };
+/** Emoji of a category (built-in or created by the user). */
+export const categoryEmoji = (id) => (id ? categories.emoji(id) : '');
 const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
 
 export const playUrl = (programId, sessionId, params = {}) => {
@@ -61,7 +63,7 @@ function mapPlanSession(r) {
     programTitle: program?.title || r.program_id,
     category: program?.category || null,
     sessionId: r.session_id,
-    title: session?.title || r.session_id,
+    title: program?.kind === 'external' ? `${program.title} · ${session?.title || r.session_id}` : session?.title || r.session_id,
     week: r.week,
     weeks: program?.schedule?.length || null,
     date: r.date,
@@ -115,8 +117,7 @@ export async function createPlan(input) {
     const ins = db.prepare(`INSERT INTO plan_sessions (id, plan_id, program_id, session_id, week, date, time, duration_min)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const s of schedule) {
-      const steps = expandSession(program, getSession(program, s.sessionId), s.week, ex);
-      ins.run(crypto.randomUUID(), id, program.id, s.sessionId, s.week, s.date, time, Math.max(5, Math.round(estimateSeconds(steps) / 60)));
+      ins.run(crypto.randomUUID(), id, program.id, s.sessionId, s.week, s.date, time, sessionMinutes(program, getSession(program, s.sessionId), s.week, ex));
     }
   });
   await syncPlan(id);
@@ -127,16 +128,17 @@ function eventFor(ps, program, calendarId, reminder) {
   const session = program.sessions.find((s) => s.id === ps.session_id);
   const start = new Date(`${ps.date}T${ps.time}:00`);
   const end = new Date(start.getTime() + ps.duration_min * 60e3);
-  const names = session ? [...new Set(session.blocks.flatMap((b) => b.items.map((i) => i.exercise)))] : [];
+  const names = session?.blocks ? [...new Set(session.blocks.flatMap((b) => b.items.map((i) => i.exercise)))] : [];
   const ex = exerciseMap();
   return {
     calendarId,
-    title: `${CATEGORY_EMOJI[program.category] || '🏃'} ${session?.title || ps.session_id}`,
+    title: `${categoryEmoji(program.category) || '🏃'} ${program.kind === 'external' ? `${program.title} · ` : ''}${session?.title || ps.session_id}`,
     start: start.toISOString(),
     end: end.toISOString(),
     description: [
       `${program.title} · settimana ${ps.week} di ${program.schedule.length}`,
       session?.focus || '',
+      program.kind === 'external' ? `Programma esterno: ${session?.url || program.url}` : '',
       names.length ? `Esercizi: ${names.map((n) => ex.get(n)?.name || n).join(', ')}` : '',
       'Creato da Moveo',
     ].filter(Boolean).join('\n'),
@@ -170,6 +172,23 @@ export async function syncPlan(planId) {
   }
 }
 
+/** After a rename / new category: updates title and description of the upcoming events already in Calendary. */
+export async function retitleProgramEvents(programId) {
+  if (!calendaryEnabled()) return 0;
+  const program = getProgram(programId);
+  const rows = db.prepare(`SELECT ps.*, p.reminder_minutes FROM plan_sessions ps JOIN plans p ON p.id = ps.plan_id
+    WHERE ps.program_id = ? AND ps.calendary_event_id IS NOT NULL AND ps.log_id IS NULL AND ps.date >= ?`).all(programId, ymd(new Date()));
+  let n = 0;
+  for (const ps of rows) {
+    const ev = eventFor(ps, program, null, ps.reminder_minutes);
+    try {
+      await calendary.updateEvent(ps.calendary_event_id, { title: ev.title, description: ev.description });
+      n += 1;
+    } catch { /* event deleted in Calendary: skip */ }
+  }
+  return n;
+}
+
 export async function syncAllPlans() {
   for (const p of db.prepare("SELECT id FROM plans WHERE calendary_status IS NULL OR calendary_status != 'ok'").all()) {
     await syncPlan(p.id);
@@ -200,7 +219,7 @@ export async function markPlanSessionDone(planSessionId, logId) {
     const session = program?.sessions.find((s) => s.id === ps.session_id);
     try {
       await calendary.updateEvent(ps.calendary_event_id, {
-        title: `✓ ${CATEGORY_EMOJI[program?.category] || ''} ${session?.title || ps.session_id}`.replace(/\s+/g, ' '),
+        title: `✓ ${categoryEmoji(program?.category)} ${program?.kind === 'external' ? `${program.title} · ` : ''}${session?.title || ps.session_id}`.replace(/\s+/g, ' '),
         reminderMinutes: null,
       });
     } catch (err) {

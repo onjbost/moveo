@@ -1,4 +1,9 @@
-export type Category = 'desk' | 'recovery' | 'yoga' | 'pilates' | 'calisthenics' | 'surf';
+import type { Animation } from './animCore';
+
+/** Category id: a built-in one ('desk', 'recovery', 'yoga', 'pilates', 'calisthenics', 'surf') or one you created. */
+export type Category = string;
+
+export interface CategoryInfo { id: string; label: string; emoji: string; color: string | null; builtin: boolean; programs: number }
 
 export interface Exercise {
   id: string;
@@ -15,13 +20,15 @@ export interface Exercise {
   harder?: string;
   caution?: string;
   source?: string;
+  animation?: Animation | null;
+  video?: string | null;
 }
 
 export interface ProgramSummary {
   id: string;
   title: string;
   category: Category;
-  kind: 'program' | 'collection';
+  kind: 'program' | 'collection' | 'external';
   level: string;
   summary: string;
   weeks: number;
@@ -47,7 +54,9 @@ export interface ProgramDetail {
   id: string;
   title: string;
   category: Category;
-  kind: 'program' | 'collection';
+  kind: 'program' | 'collection' | 'external';
+  url?: string;
+  minutes?: number;
   level?: string;
   summary?: string;
   description?: string;
@@ -86,7 +95,14 @@ export interface Playable {
   seconds: number;
   steps: Step[];
   exercises: Record<string, Exercise>;
+  external: { url: string; site: string; embed: string | null; youtube: { videoId?: string; playlistId?: string; index?: number } | null; minutes: number; attachment: (Attachment & { page: number | null }) | null } | null;
 }
+
+/** File the user downloaded from the author's site (PDF or poster), shown unchanged. scope '_' = whole program. */
+export interface Attachment { scope: string; mime: string; name: string; size: number; firstPage: number | null; updatedAt: string; url: string }
+
+/** Sites with free workouts to link as external programs. */
+export const DAREBEE_URL = 'https://darebee.com/programs.html';
 
 export interface PlanSession {
   id: string;
@@ -180,11 +196,71 @@ export interface Today {
   paused: boolean;
   stats: Stats;
   recent: LogEntry[];
+  proposal: { id: string; title: string; summary: string } | null;
 }
+
+export interface GenSettings {
+  auto: boolean;
+  goals: string;
+  maxMinutes: number;
+  sessionsPerWeek: number;
+  categories: Category[];
+}
+
+export interface Proposal {
+  id: string;
+  createdAt: string;
+  status: 'pending' | 'approved' | 'rejected';
+  engine: 'ai' | 'rules';
+  model: string | null;
+  request: string;
+  rationale: string;
+  warnings: string[];
+  program: ProgramDetail;
+}
+
+export interface GeneratorState {
+  ai: boolean;
+  model: string;
+  settings: GenSettings;
+  nearEnd: { programId: string; done: number; total: number; avgEffort: number | null; adherence: number | null }[];
+  proposals: Proposal[];
+}
+
+export interface PlaylistInfo {
+  playlistId: string;
+  title: string | null;
+  url: string;
+  apiKey: boolean;
+  videos: { index: number; videoId: string; title: string; minutes: number | null; thumbnail: string | null }[];
+}
+
+/** youtube-nocookie embed for a video/playlist link (client side, for exercise videos). */
+export function youtubeEmbed(raw: string): string | null {
+  try {
+    const u = new URL(raw);
+    const host = u.hostname.replace(/^(www|m|music)\./, '');
+    let v: string | null = null;
+    if (host === 'youtu.be') v = u.pathname.slice(1);
+    else if (u.pathname === '/watch') v = u.searchParams.get('v');
+    else v = u.pathname.match(/^\/(?:embed|shorts|live)\/([^/?]+)/)?.[1] || null;
+    const list = u.searchParams.get('list');
+    if (!['youtube.com', 'youtu.be', 'youtube-nocookie.com'].includes(host) || (!v && !list)) return null;
+    const q = new URLSearchParams({ rel: '0', modestbranding: '1', playsinline: '1' });
+    if (list) q.set('list', list);
+    return v && v !== 'videoseries' ? `https://www.youtube-nocookie.com/embed/${v}?${q}` : `https://www.youtube-nocookie.com/embed/videoseries?${q}`;
+  } catch {
+    return null;
+  }
+}
+
+export interface PlanInput { startDate: string; days: number[]; time: string; reminderMinutes: number | null }
 
 export interface Status {
   version: string;
   publicUrl: string;
+  calendaryPublicUrl: string;
+  suite: boolean;
   calendary: { ok: boolean; configured: boolean; message: string };
   homeAssistant: { ok: boolean; configured: boolean; message: string; notifyServices?: string[] };
 }
@@ -219,6 +295,18 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
 const get = <T,>(p: string) => request<T>('GET', p);
 const post = <T,>(p: string, b: unknown = {}) => request<T>('POST', p, b);
 
+async function upload<T>(path: string, file: File): Promise<T> {
+  const res = await fetch(`/api${path}`, {
+    method: 'PUT',
+    headers: { 'content-type': file.type || 'application/octet-stream', 'x-file-name': encodeURIComponent(file.name) },
+    body: file,
+    credentials: 'same-origin',
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new ApiError(data?.error || res.statusText, res.status);
+  return data as T;
+}
+
 export const api = {
   session: () => get<{ authenticated: boolean; authConfigured: boolean }>('/session'),
   login: (password: string) => post<{ ok: boolean }>('/login', { password }),
@@ -226,6 +314,16 @@ export const api = {
 
   programs: () => get<ProgramSummary[]>('/programs'),
   program: (id: string) => get<ProgramDetail>(`/programs/${id}`),
+  updateProgram: (id: string, patch: { title?: string; category?: string }) => request<ProgramDetail>('PATCH', `/programs/${id}`, patch),
+  categories: () => get<CategoryInfo[]>('/categories'),
+  createCategory: (c: { label: string; emoji?: string; color?: string }) => post<CategoryInfo>('/categories', c),
+  updateCategory: (id: string, c: { label?: string; emoji?: string; color?: string }) => request<CategoryInfo>('PATCH', `/categories/${id}`, c),
+  deleteCategory: (id: string) => request<{ ok: boolean }>('DELETE', `/categories/${id}`),
+  attachments: (id: string) => get<Attachment[]>(`/programs/${id}/attachments`),
+  uploadAttachment: (id: string, scope: string, file: File, firstPage?: number) =>
+    upload<Attachment>(`/programs/${id}/attachments/${scope}${firstPage ? `?firstPage=${firstPage}` : ''}`, file),
+  setFirstPage: (id: string, firstPage: number) => request<Attachment>('PATCH', `/programs/${id}/attachments/_`, { firstPage }),
+  removeAttachment: (id: string, scope: string) => request<{ ok: boolean }>('DELETE', `/programs/${id}/attachments/${scope}`),
   deleteProgram: (id: string) => request('DELETE', `/programs/${id}`),
   exercises: () => get<Exercise[]>('/exercises'),
   play: (programId: string, sessionId: string, week = 1) => get<Playable>(`/play/${programId}/${sessionId}?w=${week}`),
@@ -250,12 +348,26 @@ export const api = {
   addLog: (input: Record<string, unknown>) => post<LogEntry>('/logs', input),
   deleteLog: (id: string) => request('DELETE', `/logs/${id}`),
   stats: () => get<Stats>('/stats'),
+
+  generator: () => get<GeneratorState>('/generator'),
+  saveGenSettings: (s: Partial<GenSettings>) => request<GenSettings>('PUT', '/generator/settings', s),
+  propose: (input: { request?: string; engine?: 'auto' | 'rules' }) => post<Proposal>('/generator/propose', input),
+  approveProposal: (id: string, plan: PlanInput | null) => post<{ proposal: Proposal; plan: Plan | null }>(`/generator/proposals/${id}/approve`, plan || {}),
+  rejectProposal: (id: string) => post<Proposal>(`/generator/proposals/${id}/reject`),
+  setExerciseVideo: (id: string, url: string) => request<Exercise>('PUT', `/exercises/${id}/video`, { url }),
+  resolvePlaylist: (url: string) => post<PlaylistInfo>('/youtube/resolve', { url }),
+  createFromPlaylist: (input: { url: string; title: string; category: Category; perWeek: number; weeks: number; minutes: number;
+    videos: { index: number; videoId?: string | null; title: string; minutes?: number | null }[] }) => post<ProgramDetail>('/youtube/program', input),
+  addExternal: (input: { title: string; url: string; category: Category; days: number; perWeek: number; minutes: number; notes?: string }) =>
+    post<ProgramDetail>('/external', input),
   status: () => get<Status>('/status'),
+  suiteLink: (next: string) => post<{ url: string }>('/suite/link', { next }),
 };
 
 // ------------------------------------------------------------------ helpers
 
-export const CATEGORY_LABEL: Record<Category, string> = {
+// Filled with the built-in categories and then, at login, with the ones you created (see categories.ts).
+export const CATEGORY_LABEL: Record<string, string> = {
   desk: 'Scrivania',
   recovery: 'Recupero',
   yoga: 'Yoga',
@@ -264,7 +376,7 @@ export const CATEGORY_LABEL: Record<Category, string> = {
   surf: 'Surf',
 };
 
-export const CATEGORY_EMOJI: Record<Category, string> = {
+export const CATEGORY_EMOJI: Record<string, string> = {
   desk: '🪑', recovery: '🌿', yoga: '🧘', pilates: '⭕', calisthenics: '💪', surf: '🏄',
 };
 

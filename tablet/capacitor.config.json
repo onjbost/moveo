@@ -1,0 +1,22 @@
+{
+  "appId": "it.gattucciocloud.moveo",
+  "appName": "Moveo",
+  "webDir": "www",
+  "server": {
+    "url": "https://moveo.gattucciocloud.it/tablet",
+    "cleartext": false,
+    "errorPath": "index.html",
+    "allowNavigation": ["moveo.gattucciocloud.it"]
+  },
+  "android": {
+    "backgroundColor": "#071a1d",
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": true,
+      "style": "DARK",
+      "backgroundColor": "#00000000"
+    }
+  }
+}

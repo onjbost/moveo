@@ -86,6 +86,27 @@ db.exec(`
     UNIQUE (date, slot)
   );
 
+  -- Next-program proposals (AI or rules), approved by the user before they become a plan.
+  CREATE TABLE IF NOT EXISTS proposals (
+    id TEXT PRIMARY KEY,
+    created_at TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'pending',
+    engine TEXT NOT NULL,
+    model TEXT,
+    based_on_plan TEXT,
+    request TEXT,
+    program TEXT NOT NULL,
+    rationale TEXT,
+    warnings TEXT
+  );
+
+  -- Video chosen by the user for an exercise (YouTube link), shown in "Come si fa".
+  CREATE TABLE IF NOT EXISTS exercise_media (
+    exercise_id TEXT PRIMARY KEY,
+    video TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  );
+
   CREATE TABLE IF NOT EXISTS settings (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL

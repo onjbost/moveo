@@ -1,5 +1,5 @@
 name: Moveo
-version: "0.1.0"
+version: "0.6.0"
 slug: moveo
 description: Allenamento, stretching e pause attive (yoga, pilates, calisthenics, surf) collegato a Calendary
 url: https://moveo.gattucciocloud.it
@@ -22,9 +22,15 @@ options:
   timezone: "Europe/Rome"
   calendary_url: "http://local-calendary:8787"
   calendary_token: ""
+  calendary_public_url: "https://calendary.gattucciocloud.it"
   calendary_calendar: "Allenamento"
   calendary_push: true
   ha_notify_services: ""
+  ai_base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+  ai_api_key: ""
+  ai_model: "gemini-2.5-flash"
+  ai_fallback_models: "gemini-2.5-flash-lite"
+  youtube_api_key: ""
   ha_sensors: true
 schema:
   password: password
@@ -32,7 +38,13 @@ schema:
   timezone: str
   calendary_url: url?
   calendary_token: password?
+  calendary_public_url: url?
   calendary_calendar: str?
   calendary_push: bool?
   ha_notify_services: str?
+  ai_base_url: url?
+  ai_api_key: password?
+  ai_model: str?
+  ai_fallback_models: str?
+  youtube_api_key: password?
   ha_sensors: bool?

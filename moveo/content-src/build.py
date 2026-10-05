@@ -4,6 +4,7 @@ import pathlib
 
 from exercises import EX
 from programs import PROGRAMS
+from animations import ANIMS
 
 out = pathlib.Path(__file__).resolve().parent.parent / 'server' / 'content'
 (out / 'programs').mkdir(parents=True, exist_ok=True)
@@ -20,6 +21,9 @@ for p in PROGRAMS:
                 assert it['exercise'] in ids, f"{p['id']}/{s['id']}: {it['exercise']} sconosciuto"
                 used.add(it['exercise'])
 
+for k in ANIMS:
+    assert k in ids, f'animazione per esercizio sconosciuto: {k}'
+(out / 'animations.json').write_text(json.dumps(ANIMS, ensure_ascii=False) + '\n', encoding='utf-8')
 (out / 'exercises.json').write_text(json.dumps(EX, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 for i, p in enumerate(PROGRAMS, 1):
     (out / 'programs' / f"{i:02d}-{p['id']}.json").write_text(json.dumps(p, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')

@@ -5,12 +5,14 @@ import Fastify from 'fastify';
 import fastifyCookie from '@fastify/cookie';
 import fastifyStatic from '@fastify/static';
 import { config } from './config.js';
-import { registerAuth } from './auth.js';
+import { registerAuth, startSession } from './auth.js';
+import { verifyTicket } from './suite.js';
 import { registerRoutes } from './routes.js';
 import { loadBuiltinContent } from './content.js';
 import { startBreakScheduler } from './breaks.js';
 import { publishSensors } from './logs.js';
 import { syncAllPlans } from './plans.js';
+import { autoPropose } from './generator.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const webDist = process.env.WEB_DIST || path.resolve(here, '../../web/dist');
@@ -32,6 +34,14 @@ loadBuiltinContent(app.log);
 await app.register(fastifyCookie);
 registerAuth(app);
 await app.register(registerRoutes, { prefix: '/api' });
+
+// Single sign-on from Calendary: /sso?t=<ticket signed by Calendary> → session cookie → redirect.
+app.get('/sso', async (req, reply) => {
+  const next = verifyTicket(req.query.t, 'calendary');
+  if (!next) return reply.redirect('/?sso=scaduto');
+  startSession(req, reply);
+  return reply.redirect(next);
+});
 
 const hasWeb = fs.existsSync(path.join(webDist, 'index.html'));
 if (hasWeb) {
@@ -59,6 +69,9 @@ startBreakScheduler();
 setTimeout(() => syncAllPlans().catch(() => {}), 20_000);
 setInterval(() => syncAllPlans().catch(() => {}), 15 * 60e3);
 publishSensors().catch(() => {});
+// Next program: checked a few minutes after start, then every hour.
+setTimeout(() => autoPropose().catch(() => {}), 5 * 60e3);
+setInterval(() => autoPropose().catch(() => {}), 60 * 60e3);
 setInterval(() => publishSensors().catch(() => {}), 30 * 60e3);
 
 await app.listen({ port: config.port, host: '0.0.0.0' });

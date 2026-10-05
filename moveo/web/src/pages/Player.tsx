@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { api, CATEGORY_LABEL, fmtDuration, youtubeSearch, type Exercise, type Playable, type Step } from '../api';
+import { AttachmentView } from '../components/AttachmentView';
+import { api, CATEGORY_LABEL, fmtDuration, youtubeEmbed, youtubeSearch, type Exercise, type Playable, type Step } from '../api';
+import { ExerciseAnimation } from '../components/ExerciseAnimation';
+import { YouTubePlaylistPlayer } from '../components/YouTubePlaylistPlayer';
+import { homePath } from '../home';
+import { keepAwake } from '../native';
 import { navigate } from '../router';
 import { ErrorBox, Loading, Modal, useData, useToast } from '../ui';
 
@@ -100,7 +105,87 @@ export function Player({ programId, sessionId, week, planSessionId, breakId }: {
   const { data, error, reload } = useData(() => api.play(programId, sessionId, week), [programId, sessionId, week]);
   if (error) return <div className="main"><ErrorBox error={error} retry={reload} /></div>;
   if (!data) return <div className="main"><Loading /></div>;
+  if (data.external) return <ExternalRunner play={data} planSessionId={planSessionId} />;
   return <Runner play={data} planSessionId={planSessionId} breakId={breakId} />;
+}
+
+/** Session of an external program (e.g. DAREBEE): open it on its site, time it, then log it here. */
+function ExternalRunner({ play, planSessionId }: { play: Playable; planSessionId: string | null }) {
+  const toast = useToast();
+  const [startedAt, setStartedAt] = useState<number | null>(null);
+  const [now, setNow] = useState(Date.now());
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!startedAt || done) return;
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, [startedAt, done]);
+  useEffect(() => {
+    if (!startedAt || done) return;
+    let release: (() => void) | null = null;
+    keepAwake().then((r) => { release = r; });
+    return () => release?.();
+  }, [startedAt, done]);
+  const ext = play.external!;
+  const startClock = useCallback(() => setStartedAt((s) => s || Date.now()), []);
+  const seconds = startedAt ? Math.round((now - startedAt) / 1000) : 0;
+  const leave = () => navigate(homePath(), { replace: true });
+
+  if (done) {
+    return <DoneScreen play={play} seconds={seconds || play.seconds} completion={1} planSessionId={planSessionId} breakId={null}
+      onSaved={() => { toast('Allenamento salvato 💪'); leave(); }} onDiscard={leave} />;
+  }
+  return (
+    <div className={`player cat-${play.program.category}`} style={{ overflow: 'auto' }}>
+      <div className="player-top">
+        <button className="btn icon ghost" onClick={leave} aria-label="Chiudi">✕</button>
+        <div className="grow muted small">{play.program.title}</div>
+      </div>
+      <div style={{ maxWidth: ext.embed || ext.youtube || ext.attachment ? 1000 : 640, width: '100%', margin: 'auto' }} className="stack center">
+        <div className="muted">{play.program.title} · settimana {play.week} · circa {Math.round(play.seconds / 60)} minuti</div>
+        <h1>{play.session.title}</h1>
+        {ext.attachment ? (
+          <>
+            <div className="row" style={{ justifyContent: 'center' }}>
+              {startedAt ? (
+                <>
+                  <div className="num" style={{ fontSize: '2.6rem', fontWeight: 700 }}>{Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, '0')}</div>
+                  <button className="btn coral lg" onClick={() => setDone(true)}>✓ Fatto</button>
+                </>
+              ) : <button className="btn primary lg" onClick={() => setStartedAt(Date.now())}>⏱ Inizia</button>}
+              <a className="btn ghost" href={ext.url} target="_blank" rel="noopener">↗ {ext.site}</a>
+            </div>
+            <AttachmentView att={ext.attachment} title={play.session.title} />
+            <p className="faint tiny">File scaricato da {ext.site} per uso personale, mostrato senza modifiche.</p>
+          </>
+        ) : (<>
+        {!ext.embed && ext.youtube?.playlistId && ext.youtube.index ? (
+          <YouTubePlaylistPlayer playlistId={ext.youtube.playlistId} index={ext.youtube.index} title={play.session.title} onStart={startClock} />
+        ) : ext.embed ? (
+          <div className="video-frame" style={{ width: 'min(960px, 92vw)', alignSelf: 'center' }}>
+            <iframe src={ext.embed} title={play.session.title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen
+              onLoad={() => { if (!startedAt) setStartedAt(Date.now()); }} />
+          </div>
+        ) : (
+          <p className="muted">Questa sessione è su <b>{ext.site}</b>: aprila, allenati seguendo le indicazioni del sito e torna qui per segnarla come fatta.</p>
+        )}
+        <div className="row" style={{ justifyContent: 'center' }}>
+          <a className={`btn ${ext.embed || ext.youtube ? '' : 'primary lg'}`} href={ext.url} target="_blank" rel="noopener" onClick={() => { if (!startedAt) setStartedAt(Date.now()); }}>
+            ↗ Apri su {ext.site}
+          </a>
+          {!startedAt && <button className="btn lg" onClick={() => setStartedAt(Date.now())}>⏱ Avvia cronometro</button>}
+        </div>
+        {startedAt && (
+          <>
+            <div className="reps-big num" style={{ fontSize: '4rem' }}>{Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, '0')}</div>
+            <button className="btn coral lg" style={{ alignSelf: 'center' }} onClick={() => setDone(true)}>✓ Fatto</button>
+          </>
+        )}
+        {!ext.embed && !ext.youtube && <p className="faint tiny">Contenuti, immagini e istruzioni restano sul sito dell'autore: Moveo pianifica e registra. Puoi caricare il PDF o le schede scaricate nella pagina del programma.</p>}
+        </>)}
+      </div>
+    </div>
+  );
 }
 
 function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionId: string | null; breakId: string | null }) {
@@ -131,20 +216,13 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
   const nextWork = useMemo(() => steps.slice(i + 1).find((s): s is Step => s.kind === 'work'), [steps, i]);
   const ex: Exercise | undefined = step?.kind === 'work' && step.exercise ? play.exercises[step.exercise] : undefined;
 
-  // wake lock while running
+  // screen always on while running (native plugin in the tablet app, Wake Lock API in the browser)
   useEffect(() => {
     if (phase !== 'run') return;
-    let lock: WakeLockSentinel | null = null;
-    const acquire = async () => {
-      try { lock = await navigator.wakeLock?.request('screen'); } catch { /* not supported */ }
-    };
-    acquire();
-    const onVis = () => document.visibilityState === 'visible' && acquire();
-    document.addEventListener('visibilitychange', onVis);
-    return () => {
-      document.removeEventListener('visibilitychange', onVis);
-      lock?.release().catch(() => {});
-    };
+    let release: (() => void) | null = null;
+    let cancelled = false;
+    keepAwake().then((r) => { if (cancelled) r(); else release = r; });
+    return () => { cancelled = true; release?.(); };
   }, [phase]);
 
   const enter = useCallback((idx: number) => {
@@ -247,8 +325,7 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
   };
   const leave = () => {
     if ('speechSynthesis' in window) speechSynthesis.cancel();
-    if (history.length > 1) history.back();
-    else navigate('/', { replace: true });
+    navigate(homePath(), { replace: true });
   };
 
   const cc = `cat-${play.program.category}`;
@@ -300,7 +377,7 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
   // ---------------------------------------------------------------- done
   if (phase === 'done') {
     return <DoneScreen play={play} seconds={activeSec()} completion={completion} planSessionId={planSessionId} breakId={breakId}
-      onSaved={() => { toast('Allenamento salvato 💪'); navigate('/', { replace: true }); }} onDiscard={leave} />;
+      onSaved={() => { toast('Allenamento salvato 💪'); navigate(homePath(), { replace: true }); }} onDiscard={leave} />;
   }
 
   // ---------------------------------------------------------------- run
@@ -344,6 +421,10 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
         </div>
         {step.kind === 'work' && step.side && <div className="side">{sideLabel(step.side)}</div>}
 
+        <div className={`player-visual ${ex?.animation && step.kind === 'work' ? 'with-anim' : ''}`}>
+        {ex?.animation && step.kind === 'work' && (
+          <div className="player-anim"><ExerciseAnimation anim={ex.animation} mirror={step.side === 'destro'} paused={paused} label={`Animazione: ${ex.name}`} /></div>
+        )}
         {timed ? (
           <div className="ring">
             <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -359,6 +440,7 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
             <div className="muted">ripetizioni{step.kind === 'work' && step.side === 'per lato' ? ' per lato' : ''} · <span className="num">{fmtClock(elapsed)}</span></div>
           </div>
         )}
+        </div>
 
         {step.kind === 'work' && <div className="cue">{cue}</div>}
         {step.kind !== 'work' && nextWork && (
@@ -391,7 +473,7 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
           <div className="stack">
             <p className="muted">Hai completato {doneWork.size} esercizi su {workTotal} ({Math.round(completion * 100)}%). Anche mezza sessione conta: vuoi salvarla?</p>
             <DoneScreen embedded play={play} seconds={activeSec()} completion={completion} planSessionId={planSessionId} breakId={breakId}
-              onSaved={() => { toast('Sessione parziale salvata'); navigate('/', { replace: true }); }} onDiscard={leave} />
+              onSaved={() => { toast('Sessione parziale salvata'); navigate(homePath(), { replace: true }); }} onDiscard={leave} />
           </div>
         </Modal>
       )}
@@ -401,10 +483,33 @@ function Runner({ play, planSessionId, breakId }: { play: Playable; planSessionI
 
 // ------------------------------------------------------------ how-to
 
-export function HowTo({ ex, onClose }: { ex: Exercise; onClose: () => void }) {
+export function HowTo({ ex: initial, onClose }: { ex: Exercise; onClose: () => void }) {
+  const toast = useToast();
+  const [ex, setEx] = useState(initial);
+  const [videoInput, setVideoInput] = useState('');
+  const [editing, setEditing] = useState(false);
+  const embed = ex.video ? youtubeEmbed(ex.video) : null;
+  const saveVideo = async (url: string) => {
+    try {
+      setEx(await api.setExerciseVideo(ex.id, url));
+      setEditing(false);
+      setVideoInput('');
+      toast(url ? 'Video salvato per questo esercizio' : 'Video rimosso');
+    } catch (e) {
+      toast((e as Error).message);
+    }
+  };
   return (
     <Modal title={ex.name} sub={[ex.position, ...(ex.targets || [])].filter(Boolean).join(' · ')} onClose={onClose}>
       <div className="stack how">
+        {ex.animation && (
+          <div className="card flat" style={{ padding: 12 }}>
+            <ExerciseAnimation anim={ex.animation} label={`Animazione: ${ex.name}`} />
+          </div>
+        )}
+        {embed && (
+          <div className="video-frame"><iframe src={embed} title={`Video: ${ex.name}`} allow="encrypted-media; picture-in-picture; fullscreen" allowFullScreen /></div>
+        )}
         <p>{ex.description}</p>
         {!!ex.cues?.length && (
           <ul style={{ margin: 0, paddingLeft: 18 }} className="stack tight">
@@ -415,7 +520,18 @@ export function HowTo({ ex, onClose }: { ex: Exercise; onClose: () => void }) {
         {ex.harder && <div className="small"><b>Più difficile:</b> <span className="muted">{ex.harder}</span></div>}
         {ex.caution && <div className="alert small">⚠️ {ex.caution}</div>}
         {ex.equipment?.length ? <div className="faint small">Serve: {ex.equipment.join(', ')}</div> : null}
-        <a className="btn sm" href={youtubeSearch(ex)} target="_blank" rel="noopener" style={{ alignSelf: 'flex-start' }}>▶ Cerca un video dimostrativo</a>
+        {editing ? (
+          <div className="row nowrap">
+            <input className="input" autoFocus placeholder="Link YouTube del video" value={videoInput} onChange={(e) => setVideoInput(e.target.value)} />
+            <button className="btn sm primary" onClick={() => saveVideo(videoInput)} disabled={!videoInput.trim()}>Salva</button>
+          </div>
+        ) : (
+          <div className="row">
+            <a className="btn sm" href={youtubeSearch(ex)} target="_blank" rel="noopener">🔎 Cerca un video</a>
+            <button className="btn sm ghost" onClick={() => setEditing(true)}>{ex.video ? '✏️ Cambia video' : '＋ Collega un video YouTube'}</button>
+            {ex.video && <button className="btn sm ghost" onClick={() => saveVideo('')}>Rimuovi video</button>}
+          </div>
+        )}
       </div>
     </Modal>
   );

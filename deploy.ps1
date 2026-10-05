@@ -13,11 +13,30 @@ param(
 )
 
 $source = Join-Path $PSScriptRoot 'moveo'
+
+# The Samba share needs credentials (user/password of the Home Assistant "Samba share" add-on).
+# If Windows has none saved for this server, ask once and save them for the next deploys.
+$share = ($Target -split '\\' | Where-Object { $_ } | Select-Object -First 2) -join '\'
+$share = "\\$share"
+if (-not (Test-Path $share)) {
+  Write-Host "Accesso a $share negato o credenziali mancanti." -ForegroundColor Yellow
+  $cred = Get-Credential -Message "Utente e password dell'add-on Samba share di Home Assistant"
+  if (-not $cred) { exit 1 }
+  $server = ($share -split '\\' | Where-Object { $_ })[0]
+  cmd /c "net use $share /delete /y" 2>$null | Out-Null
+  cmdkey /add:$server /user:$($cred.UserName) /pass:$($cred.GetNetworkCredential().Password) | Out-Null
+  net use $share /user:$($cred.UserName) $cred.GetNetworkCredential().Password /persistent:no | Out-Null
+  if (-not (Test-Path $share)) {
+    Write-Host "Ancora nessun accesso a $(share): controlla utente e password nella configurazione dell'add-on Samba." -ForegroundColor Red
+    exit 1
+  }
+  Write-Host "Credenziali salvate in Gestione credenziali di Windows." -ForegroundColor Green
+}
 $excludeDirs = @('node_modules', 'data', 'dist')
 if (-not (Test-Path $Target)) { New-Item -ItemType Directory -Force $Target | Out-Null }
 
 robocopy $source $Target /E /XD $excludeDirs /XF *.log /R:1 /W:1 /NP /NDL /NJH /NJS
-if ($LASTEXITCODE -ge 8) { Write-Host "robocopy ha segnalato errori ($LASTEXITCODE)" -ForegroundColor Yellow }
+if ($LASTEXITCODE -ge 8) { Write-Host "robocopy ha segnalato errori ($LASTEXITCODE)" -ForegroundColor Red; exit 1 }
 
 # robocopy doesn't always fail when a folder is refused: verify every file actually arrived.
 $skip = '\\(' + ($excludeDirs -join '|') + ')\\'

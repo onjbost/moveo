@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import { config } from './config.js';
 import { getSetting, setSetting } from './db.js';
+import { bearerOk } from './suite.js';
 
 const COOKIE = 'moveo_session';
 const SESSION_DAYS = 365; // the kiosk tablet should stay logged in
@@ -60,6 +61,20 @@ function recordFailure(ip) {
 
 export const isAuthenticated = (req) => config.noAuth || verifyToken(req.cookies?.[COOKIE]);
 
+/** Sets the long-lived session cookie (after a password login or a suite single sign-on ticket). */
+export function startSession(req, reply) {
+  reply.setCookie(COOKIE, makeToken(), {
+    path: '/',
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: req.protocol === 'https',
+    maxAge: SESSION_DAYS * 86400,
+  });
+}
+
+// Endpoints Calendary calls server-to-server with the shared suite token.
+const SUITE_PATHS = new Set(['/api/suite/today']);
+
 export function registerAuth(app) {
   if (config.noAuth) app.log.warn('MOVEO_NO_AUTH=1: autenticazione disattivata (solo per sviluppo!)');
   else if (!config.password) app.log.warn('Nessuna password configurata: le API resteranno bloccate finché non la imposti.');
@@ -67,6 +82,7 @@ export function registerAuth(app) {
   app.addHook('onRequest', async (req, reply) => {
     const path = req.url.split('?')[0];
     if (!path.startsWith('/api/') || PUBLIC_PATHS.has(path)) return;
+    if (SUITE_PATHS.has(path) && bearerOk(req)) return;
     if (!authConfigured()) return reply.code(503).send({ error: "Imposta una password nelle opzioni dell'add-on" });
     if (!isAuthenticated(req)) return reply.code(401).send({ error: 'Accesso richiesto' });
   });
@@ -86,13 +102,7 @@ export function registerAuth(app) {
       return reply.code(401).send({ error: 'Password errata' });
     }
     attempts.delete(ip);
-    reply.setCookie(COOKIE, makeToken(), {
-      path: '/',
-      httpOnly: true,
-      sameSite: 'lax',
-      secure: req.protocol === 'https',
-      maxAge: SESSION_DAYS * 86400,
-    });
+    startSession(req, reply);
     return { ok: true };
   });
 

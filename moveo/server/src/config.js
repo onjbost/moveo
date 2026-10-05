@@ -42,7 +42,20 @@ export const config = {
     url: String(pick('CALENDARY_URL', 'calendary_url', 'http://local-calendary:8787')).replace(/\/$/, ''),
     token: String(pick('CALENDARY_TOKEN', 'calendary_token', '')),
     calendarName: String(pick('CALENDARY_CALENDAR', 'calendary_calendar', 'Allenamento')),
+    /** Public address of Calendary, for the links (and single sign-on) from Moveo to Calendary. */
+    publicUrl: String(pick('CALENDARY_PUBLIC_URL', 'calendary_public_url', 'https://calendary.gattucciocloud.it')).replace(/\/$/, ''),
     push: bool(pick('CALENDARY_PUSH', 'calendary_push', true)),
+  },
+  // Program generator: same OpenAI-compatible endpoint as Calendary's assistant (Gemini by default).
+  ai: {
+    baseUrl: String(pick('AI_BASE_URL', 'ai_base_url', 'https://generativelanguage.googleapis.com/v1beta/openai')).replace(/\/$/, ''),
+    apiKey: String(pick('AI_API_KEY', 'ai_api_key', '')),
+    model: String(pick('AI_MODEL', 'ai_model', 'gemini-2.5-flash')),
+    fallbackModels: list(pick('AI_FALLBACK_MODELS', 'ai_fallback_models', 'gemini-2.5-flash-lite')),
+  },
+  // Optional: lists the videos of a YouTube playlist (titles, durations). Without it the plan is built by hand.
+  youtube: {
+    apiKey: String(pick('YOUTUBE_API_KEY', 'youtube_api_key', '')),
   },
   ha: {
     /** Provided by the Supervisor when the add-on declares homeassistant_api: true. */

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { api, DAY_SHORT, type BreakSettings } from '../api';
+import { CategoryPicker } from '../components/CategoryPicker';
+import { CategoriesEditor } from '../components/CategoriesEditor';
+import { api, DAY_SHORT, type BreakSettings, type Category, DAREBEE_URL } from '../api';
 import { navigate } from '../router';
 import { ErrorBox, Loading, useData, useToast } from '../ui';
 
@@ -129,6 +131,9 @@ export function SettingsPage({ onLogout }: { onLogout: () => void }) {
         )}
       </section>
 
+      <CategoriesEditor />
+      <ExternalForm />
+
       <section className="card stack">
         <h2>Importa programmi</h2>
         <p className="muted small">Carica un file JSON esportato da Moveo o scritto a mano (anche con l'aiuto di Claude). Gli esercizi si richiamano con il loro id: li trovi nella pagina Esercizi o nei file esportati.</p>
@@ -155,5 +160,48 @@ export function SettingsPage({ onLogout }: { onLogout: () => void }) {
         </details>
       </section>
     </div>
+  );
+}
+
+/** Link a program that lives on another site (e.g. DAREBEE): planned and tracked here, content stays there. */
+function ExternalForm() {
+  const toast = useToast();
+  const [f, setF] = useState({ url: '', title: '', category: 'calisthenics' as Category, days: 30, perWeek: 5, minutes: 25 });
+  const [busy, setBusy] = useState(false);
+  const set = <K extends keyof typeof f>(k: K, v: (typeof f)[K]) => setF((x) => ({ ...x, [k]: v }));
+  useEffect(() => {
+    if (location.hash === '#esterni') document.getElementById('esterni')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+  const submit = async () => {
+    setBusy(true);
+    try {
+      const p = await api.addExternal(f);
+      toast('Programma esterno aggiunto');
+      navigate(`/programmi/${p.id}`);
+    } catch (e) {
+      toast((e as Error).message);
+      setBusy(false);
+    }
+  };
+  return (
+    <section className="card stack" id="esterni">
+      <div className="row between"><h2>Programmi esterni (es. DAREBEE)</h2>
+        <a className="btn sm ghost" href={DAREBEE_URL} target="_blank" rel="noopener">🌐 Cerca su DAREBEE ↗</a></div>
+      <p className="muted small">
+        Incolla il link di un programma pubblicato su un altro sito: Moveo crea le giornate, le mette in Calendary e registra quando le completi.
+        Il sito si apre dal player; dopo averlo creato puoi caricare nella pagina del programma il PDF o le schede che hai scaricato, per vederle senza uscire da Moveo (uso personale, file non modificati).
+      </p>
+      <div className="grid-2">
+        <label className="field">Link del programma<input className="input" placeholder="https://darebee.com/programs/…" value={f.url} onChange={(e) => set('url', e.target.value)} /></label>
+        <label className="field">Nome<input className="input" placeholder="Es. 30 Days of Change" value={f.title} onChange={(e) => set('title', e.target.value)} /></label>
+      </div>
+      <div className="grid-3">
+        <CategoryPicker value={f.category} onChange={(c) => set('category', c)} />
+        <label className="field">Giorni totali<input className="input" type="number" min={1} max={120} value={f.days} onChange={(e) => set('days', Number(e.target.value))} /></label>
+        <label className="field">Sessioni a settimana<input className="input" type="number" min={1} max={7} value={f.perWeek} onChange={(e) => set('perWeek', Number(e.target.value))} /></label>
+        <label className="field">Minuti per sessione<input className="input" type="number" min={5} max={180} value={f.minutes} onChange={(e) => set('minutes', Number(e.target.value))} /></label>
+      </div>
+      <div className="row"><button className="btn primary" onClick={submit} disabled={busy || !f.url || !f.title}>Aggiungi</button></div>
+    </section>
   );
 }
