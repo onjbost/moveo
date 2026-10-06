@@ -43,7 +43,7 @@ export const config = {
     token: String(pick('CALENDARY_TOKEN', 'calendary_token', '')),
     calendarName: String(pick('CALENDARY_CALENDAR', 'calendary_calendar', 'Allenamento')),
     /** Public address of Calendary, for the links (and single sign-on) from Moveo to Calendary. */
-    publicUrl: String(pick('CALENDARY_PUBLIC_URL', 'calendary_public_url', 'https://calendary.gattucciocloud.it')).replace(/\/$/, ''),
+    publicUrl: String(pick('CALENDARY_PUBLIC_URL', 'calendary_public_url', 'https://hubitat.gattucciocloud.it')).replace(/\/$/, ''),
     push: bool(pick('CALENDARY_PUSH', 'calendary_push', true)),
   },
   // Program generator: same OpenAI-compatible endpoint as Calendary's assistant (Gemini by default).

@@ -18,7 +18,7 @@ App di allenamento per Home Assistant, sorella di **Calendary**. Contiene:
 | `timezone` | Fuso orario, `Europe/Rome`. |
 | `calendary_url` | Indirizzo interno di Calendary. Se Calendary è un add-on locale, `http://local-calendary:8787`. Se l'hai installato da un repository GitHub, il nome host lo trovi nella pagina dell'add-on Calendary (es. `http://a1b2c3d4-calendary:8787`). Puoi anche usare `http://IP-DI-HOME-ASSISTANT:8787`. |
 | `calendary_token` | Deve essere uguale all'opzione `api_token` di Calendary (almeno 16 caratteri). |
-| `calendary_public_url` | Indirizzo pubblico di Calendary, usato per il pulsante *Calendary* e l'accesso unico (`https://calendary.gattucciocloud.it`). |
+| `calendary_public_url` | Indirizzo pubblico di Calendary, usato per il pulsante *Calendary* e l'accesso unico (`https://hubitat.gattucciocloud.it`). |
 | `calendary_calendar` | Nome del calendario creato in Calendary per gli allenamenti (default `Allenamento`). |
 | `calendary_push` | Invia le notifiche delle pause tramite le notifiche push di Calendary (PC, telefono e tablet su cui le hai attivate). |
 | `ha_notify_services` | Servizi di notifica dell'app companion separati da virgola, es. `mobile_app_pixel_8, mobile_app_galaxy_tab`. La notifica ha il pulsante **▶ Inizia**. |
